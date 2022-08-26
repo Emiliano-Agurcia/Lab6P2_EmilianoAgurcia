@@ -15,12 +15,15 @@ public class General extends Persona{
     int SemanasTrabajando;
     double Sueldo;
 
-    public General(String Ocupacion, String Horario, int SemanasTrabajando, double Sueldo) {
+    public General(String Ocupacion, String Horario, int SemanasTrabajando, double Sueldo, String ID, String Nombre, int Edad, char Sexo, String EstadoCivil, double Altura, double Peso) {
+        super(ID, Nombre, Edad, Sexo, EstadoCivil, Altura, Peso);
         this.Ocupacion = Ocupacion;
         this.Horario = Horario;
         this.SemanasTrabajando = SemanasTrabajando;
         this.Sueldo = Sueldo;
     }
+
+   
 
     public String getOcupacion() {
         return Ocupacion;

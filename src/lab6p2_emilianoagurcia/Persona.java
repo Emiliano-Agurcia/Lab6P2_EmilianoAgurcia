@@ -17,4 +17,15 @@ public class Persona {
     String EstadoCivil;
     double Altura;
     double Peso;
+
+    public Persona(String ID, String Nombre, int Edad, char Sexo, String EstadoCivil, double Altura, double Peso) {
+        this.ID = ID;
+        this.Nombre = Nombre;
+        this.Edad = Edad;
+        this.Sexo = Sexo;
+        this.EstadoCivil = EstadoCivil;
+        this.Altura = Altura;
+        this.Peso = Peso;
+    }
+    
 }

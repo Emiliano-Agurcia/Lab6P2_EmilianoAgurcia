@@ -14,11 +14,14 @@ public class Ropa extends Objeto{
     String TipoTela;
     String Pais;
 
-    public Ropa(String Talla, String TipoTela, String Pais) {
+    public Ropa(String Talla, String TipoTela, String Pais, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+        super(Usuario, Color, Descripcion, Marca, Size, Calidad);
         this.Talla = Talla;
         this.TipoTela = TipoTela;
         this.Pais = Pais;
     }
+
+    
 
     public String getTalla() {
         return Talla;

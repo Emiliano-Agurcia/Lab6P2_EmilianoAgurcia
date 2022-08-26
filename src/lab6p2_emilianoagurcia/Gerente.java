@@ -14,11 +14,14 @@ public class Gerente extends Persona{
     String Password;
     String Cargo;
 
-    public Gerente(String Usuario, String Password, String Cargo) {
+    public Gerente(String Usuario, String Password, String Cargo, String ID, String Nombre, int Edad, char Sexo, String EstadoCivil, double Altura, double Peso) {
+        super(ID, Nombre, Edad, Sexo, EstadoCivil, Altura, Peso);
         this.Usuario = Usuario;
         this.Password = Password;
         this.Cargo = Cargo;
     }
+
+    
 
     public String getUsuario() {
         return Usuario;

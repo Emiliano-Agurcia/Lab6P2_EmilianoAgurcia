@@ -18,6 +18,16 @@ public class Objeto {
     String Marca;
     int Size;
     String Calidad;
+
+    public Objeto(Persona Usuario, Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+        this.Usuario = Usuario;
+        this.Color = Color;
+        this.Descripcion = Descripcion;
+        this.Marca = Marca;
+        this.Size = Size;
+        this.Calidad = Calidad;
+        
+    }
     
     
 }

@@ -14,11 +14,14 @@ public class Hogar extends Objeto{
     String Instrucciones;//Instrucciones de funcionamiento
     int Garantia;//Tiempo de garantia
 
-    public Hogar(String Descripcion, String Instrucciones, int Garantia) {
-        this.Descripcion = Descripcion;
+    public Hogar(String DescripcionHogar, String Instrucciones, int Garantia, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+        super(Usuario, Color, Descripcion, Marca, Size, Calidad);
+        this.DescripcionHogar = DescripcionHogar;
         this.Instrucciones = Instrucciones;
         this.Garantia = Garantia;
     }
+
+    
 
     public String getDescripcion() {
         return Descripcion;

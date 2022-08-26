@@ -7,6 +7,7 @@ package lab6p2_emilianoagurcia;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -15,7 +16,7 @@ import javax.swing.UIManager;
  * @author emili
  */
 public class Main extends javax.swing.JFrame {
-
+Random random = new Random();
     /**
      * Creates new form Main
      */
@@ -35,6 +36,8 @@ public class Main extends javax.swing.JFrame {
         //Fin Crear Objeto
     }
     ArrayList <Persona> Personas = new ArrayList();
+    ArrayList <String> IDs = new ArrayList();
+    
     ArrayList <Objeto> Objetos = new ArrayList();
 
     /**
@@ -880,10 +883,46 @@ public class Main extends javax.swing.JFrame {
 
     private void BT_CP_AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BT_CP_AgregarMouseClicked
         // TODO add your handling code here:
+        
+        String EstadoCivil;
+        char Sexo;
+        
+        if(CP_RBT_EstadoSoltero.isSelected()){
+            EstadoCivil = "Soltero";
+        }else{
+            EstadoCivil = "Casado";
+        }
+        
+        if(CP_RBT_SexoM.isSelected()){
+            Sexo = 'M';
+        }else{
+            Sexo = 'F';
+        }
+        
+        String ID = Integer.toString(1000+random.nextInt(9000));
+        while(IDs.contains(ID)){
+            ID = Integer.toString(1000+random.nextInt(9000));
+        }
+        IDs.add(ID);
+        
+        
         try {
-            if(CP_CB_TipoPersona.getSelectedItem() instanceof Gerente){
-                Personas.add(new Gerente)
-            }else if(CP_CB_TipoPersona.getSelectedItem() instanceof General){
+            if(CP_CB_TipoPersona.getSelectedItem().toString().equals("Gerente")){
+                Personas.add(
+                        new Gerente(
+                                CP_Gerente_Usuario.getText(), 
+                                CP_Gerente_Password.getText(), 
+                                CP_Gerente_Cargo.getSelectedItem().toString(), 
+                                ID, 
+                                CP_TF_Nombre.getText(), 
+                                (Integer) CP_SP_Edad.getValue(), 
+                                Sexo, 
+                                EstadoCivil, 
+                                (Double) CP_SP_Altura.getValue(), 
+                                (Double) CP_SP_Peso.getValue()
+                        )
+                );
+            }else if(CP_CB_TipoPersona.getSelectedItem().toString().equals("General")){
                 
             }else{
                 

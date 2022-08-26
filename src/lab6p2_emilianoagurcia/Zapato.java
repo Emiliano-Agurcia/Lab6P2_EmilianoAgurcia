@@ -14,11 +14,14 @@ public class Zapato extends Objeto{
     String DescripcionSuela;
     int Comodidad;//1-10
 
-    public Zapato(String Talla, String DescripcionSuela, int Comodidad) {
+    public Zapato(String Talla, String DescripcionSuela, int Comodidad, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+        super(Usuario, Color, Descripcion, Marca, Size, Calidad);
         this.Talla = Talla;
         this.DescripcionSuela = DescripcionSuela;
         this.Comodidad = Comodidad;
     }
+
+    
 
     public String getTalla() {
         return Talla;
