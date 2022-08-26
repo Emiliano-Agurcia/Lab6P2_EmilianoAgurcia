@@ -5,6 +5,9 @@
  */
 package lab6p2_emilianoagurcia;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import javax.swing.UIManager;
+
 /**
  *
  * @author emili
@@ -27,17 +30,220 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        CP_Sexo = new javax.swing.ButtonGroup();
+        BACKGROUND = new javax.swing.JPanel();
+        Tab_ListaObjetos = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        CP_CB_Tipo = new javax.swing.JComboBox<>();
+        CP_FTF_ID = new javax.swing.JFormattedTextField();
+        CP_TF_Nombre = new javax.swing.JTextField();
+        CP_SP_Edad = new javax.swing.JSpinner();
+        CP_RBT_SexoM = new javax.swing.JRadioButton();
+        CP_RBT_SexoF = new javax.swing.JRadioButton();
+        CP_RBT_EstadoSoltero = new javax.swing.JRadioButton();
+        CP_RBT_EstadoCasado = new javax.swing.JRadioButton();
+        CP_SP_Peso = new javax.swing.JSpinner();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        CP_SP_Altura = new javax.swing.JSpinner();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        BACKGROUND.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Tipo de Persona");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+
+        jLabel2.setText("ID");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        jLabel3.setText("Nombre");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
+
+        jLabel4.setText("Edad");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        jLabel5.setText("Sexo");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+
+        jLabel6.setText("Estado Civil");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+
+        jLabel7.setText("Altura");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+
+        jLabel8.setText("Peso");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
+
+        jLabel9.setText("Gerentes");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+
+        jLabel10.setText("Personas Generales");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, -1, -1));
+
+        CP_CB_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(CP_CB_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 190, -1));
+
+        CP_FTF_ID.setText("jFormattedTextField1");
+        jPanel1.add(CP_FTF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        jPanel1.add(CP_TF_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+
+        CP_SP_Edad.setModel(new javax.swing.SpinnerNumberModel(20, 10, 100, 1));
+        jPanel1.add(CP_SP_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+
+        CP_Sexo.add(CP_RBT_SexoM);
+        CP_RBT_SexoM.setText("M");
+        jPanel1.add(CP_RBT_SexoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
+
+        CP_Sexo.add(CP_RBT_SexoF);
+        CP_RBT_SexoF.setText("F");
+        jPanel1.add(CP_RBT_SexoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+
+        CP_RBT_EstadoSoltero.setText("Soltero");
+        jPanel1.add(CP_RBT_EstadoSoltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+
+        CP_RBT_EstadoCasado.setText("Casado");
+        jPanel1.add(CP_RBT_EstadoCasado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+
+        CP_SP_Peso.setModel(new javax.swing.SpinnerNumberModel(120.0d, null, null, 0.1d));
+        jPanel1.add(CP_SP_Peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 80, -1));
+
+        jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("lbs.");
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 40, -1));
+
+        jTextField2.setEditable(false);
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("cm");
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 40, -1));
+
+        CP_SP_Altura.setModel(new javax.swing.SpinnerNumberModel(150.0d, null, null, 0.01d));
+        jPanel1.add(CP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 80, -1));
+
+        Tab_ListaObjetos.addTab("Crear Persona", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Crear Objeto", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Modificar Persona", jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Modificar Objeto", jPanel4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Jerarquía Personas", jPanel5);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Jerarquía Objetos", jPanel6);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Lista Personas", jPanel7);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1270, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+        );
+
+        Tab_ListaObjetos.addTab("Lista Objetos", jPanel8);
+
+        BACKGROUND.add(Tab_ListaObjetos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(BACKGROUND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(BACKGROUND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -48,27 +254,11 @@ public class Main extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +269,38 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BACKGROUND;
+    private javax.swing.JComboBox<String> CP_CB_Tipo;
+    private javax.swing.JFormattedTextField CP_FTF_ID;
+    private javax.swing.JRadioButton CP_RBT_EstadoCasado;
+    private javax.swing.JRadioButton CP_RBT_EstadoSoltero;
+    private javax.swing.JRadioButton CP_RBT_SexoF;
+    private javax.swing.JRadioButton CP_RBT_SexoM;
+    private javax.swing.JSpinner CP_SP_Altura;
+    private javax.swing.JSpinner CP_SP_Edad;
+    private javax.swing.JSpinner CP_SP_Peso;
+    private javax.swing.ButtonGroup CP_Sexo;
+    private javax.swing.JTextField CP_TF_Nombre;
+    private javax.swing.JTabbedPane Tab_ListaObjetos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
