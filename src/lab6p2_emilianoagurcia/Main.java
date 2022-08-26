@@ -6,6 +6,8 @@
 package lab6p2_emilianoagurcia;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -26,11 +28,14 @@ public class Main extends javax.swing.JFrame {
         //Fin Crear Persona
         
         
-        
         //Crear Objeto
-        
+        CO_Panel_Zapato.setVisible(false);
+        CO_Panel_Ropa.setVisible(false);
+        CO_Panel_Hogar.setVisible(false);
         //Fin Crear Objeto
     }
+    ArrayList <Persona> Personas = new ArrayList();
+    ArrayList <Objeto> Objetos = new ArrayList();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +61,7 @@ public class Main extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        CP_CB_Tipo = new javax.swing.JComboBox<>();
+        CP_CB_TipoPersona = new javax.swing.JComboBox<>();
         CP_FTF_ID = new javax.swing.JFormattedTextField();
         CP_TF_Nombre = new javax.swing.JTextField();
         CP_SP_Edad = new javax.swing.JSpinner();
@@ -99,7 +104,6 @@ public class Main extends javax.swing.JFrame {
         CO_CB_TipoObjeto = new javax.swing.JComboBox<>();
         CO_CB_PersonaIngreso = new javax.swing.JComboBox<>();
         CO_TF_Marca = new javax.swing.JTextField();
-        CO_CB_Calidad = new javax.swing.JComboBox<>();
         CO_Panel_Zapato = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -136,7 +140,49 @@ public class Main extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         ScrollPane_TextArea = new javax.swing.JScrollPane();
         CO_TA_Descripcion = new javax.swing.JTextArea();
+        CO_TF_Calidad = new javax.swing.JTextField();
+        CO_TF_Size = new javax.swing.JTextField();
+        BT_CO_Modificar = new javax.swing.JButton();
         Tab_MP = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        MP_CB_TipoPersona = new javax.swing.JComboBox<>();
+        MP_FTF_ID = new javax.swing.JFormattedTextField();
+        MP_TF_Nombre = new javax.swing.JTextField();
+        MP_SP_Edad = new javax.swing.JSpinner();
+        MP_RBT_SexoM = new javax.swing.JRadioButton();
+        MP_RBT_SexoF = new javax.swing.JRadioButton();
+        MP_RBT_EstadoSoltero = new javax.swing.JRadioButton();
+        MP_RBT_EstadoCasado = new javax.swing.JRadioButton();
+        MP_SP_Peso = new javax.swing.JSpinner();
+        jTextField5 = new javax.swing.JTextField();
+        MP_SP_Altura = new javax.swing.JSpinner();
+        BT_CP_Modificar = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        MP_Panel_Gerente = new javax.swing.JPanel();
+        MP_Gerente_Usuario = new javax.swing.JTextField();
+        MP_Gerente_Cargo = new javax.swing.JComboBox<>();
+        MP_Gerente_Password = new javax.swing.JPasswordField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        MP_Panel_General = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        MP_General_TiempoTrabajando = new javax.swing.JSpinner();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        MP_General_Ocupacion = new javax.swing.JTextField();
+        MP_General_Horario = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
         Tab_MO = new javax.swing.JPanel();
         Tab_JP = new javax.swing.JPanel();
         Tab_JO = new javax.swing.JPanel();
@@ -182,9 +228,14 @@ public class Main extends javax.swing.JFrame {
         jLabel8.setText("Peso");
         Tab_CP.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
 
-        CP_CB_Tipo.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CP_CB_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona General" }));
-        Tab_CP.add(CP_CB_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 230, -1));
+        CP_CB_TipoPersona.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_CB_TipoPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona General" }));
+        CP_CB_TipoPersona.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CP_CB_TipoPersonaItemStateChanged(evt);
+            }
+        });
+        Tab_CP.add(CP_CB_TipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 230, -1));
 
         CP_FTF_ID.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#############"))));
         Tab_CP.add(CP_FTF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 230, -1));
@@ -227,6 +278,12 @@ public class Main extends javax.swing.JFrame {
         Tab_CP.add(CP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
 
         BT_CP_Agregar.setText("Agregar Persona");
+        BT_CP_Agregar.setEnabled(false);
+        BT_CP_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BT_CP_AgregarMouseClicked(evt);
+            }
+        });
         Tab_CP.add(BT_CP_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 220, 60));
 
         jTextField3.setEditable(false);
@@ -337,30 +394,26 @@ public class Main extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel21.setText("Tamaño");
-        Tab_CO.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, -1));
+        Tab_CO.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel22.setText("Calidad");
-        Tab_CO.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
+        Tab_CO.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel23.setText("Persona que lo ingresó");
-        Tab_CO.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        Tab_CO.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, -1));
         Tab_CO.add(CO_BT_Color, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, 30));
 
-        CO_CB_TipoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Tab_CO.add(CO_CB_TipoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        CO_CB_TipoObjeto.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CO_CB_TipoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Zapato", "Ropa", "Hogar" }));
+        Tab_CO.add(CO_CB_TipoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 110, 20));
 
         CO_CB_PersonaIngreso.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CO_CB_PersonaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Tab_CO.add(CO_CB_PersonaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, 20));
+        Tab_CO.add(CO_CB_PersonaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 310, 20));
 
         CO_TF_Marca.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         Tab_CO.add(CO_TF_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 310, -1));
-
-        CO_CB_Calidad.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CO_CB_Calidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Tab_CO.add(CO_CB_Calidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, -1, -1));
 
         CO_Panel_Zapato.setBackground(new java.awt.Color(51, 51, 51));
         CO_Panel_Zapato.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -515,32 +568,199 @@ public class Main extends javax.swing.JFrame {
 
         Tab_CO.add(ScrollPane_TextArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 310, 130));
 
+        CO_TF_Calidad.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CO_TF_Calidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CO_TF_CalidadActionPerformed(evt);
+            }
+        });
+        Tab_CO.add(CO_TF_Calidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, 310, -1));
+
+        CO_TF_Size.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        Tab_CO.add(CO_TF_Size, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 310, -1));
+
+        BT_CO_Modificar.setText("Agregar Persona");
+        BT_CO_Modificar.setEnabled(false);
+        Tab_CO.add(BT_CO_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 510, 220, 60));
+
         TabbedPane.addTab("Crear Objeto", Tab_CO);
 
-        javax.swing.GroupLayout Tab_MPLayout = new javax.swing.GroupLayout(Tab_MP);
-        Tab_MP.setLayout(Tab_MPLayout);
-        Tab_MPLayout.setHorizontalGroup(
-            Tab_MPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1270, Short.MAX_VALUE)
-        );
-        Tab_MPLayout.setVerticalGroup(
-            Tab_MPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
-        );
+        Tab_MP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel37.setText("Tipo de Persona");
+        Tab_MP.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel38.setText("ID");
+        Tab_MP.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
+
+        jLabel39.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel39.setText("Nombre");
+        Tab_MP.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel40.setText("Edad");
+        Tab_MP.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel41.setText("Sexo");
+        Tab_MP.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
+
+        jLabel42.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel42.setText("Estado Civil");
+        Tab_MP.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel43.setText("Altura");
+        Tab_MP.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, -1, -1));
+
+        jLabel44.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel44.setText("Peso");
+        Tab_MP.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
+
+        MP_CB_TipoPersona.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_CB_TipoPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona General" }));
+        Tab_MP.add(MP_CB_TipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 230, -1));
+
+        MP_FTF_ID.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#############"))));
+        Tab_MP.add(MP_FTF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 230, -1));
+
+        MP_TF_Nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tab_MP.add(MP_TF_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 230, -1));
+
+        MP_SP_Edad.setModel(new javax.swing.SpinnerNumberModel(20, 10, 100, 1));
+        Tab_MP.add(MP_SP_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
+
+        CP_Sexo.add(MP_RBT_SexoM);
+        MP_RBT_SexoM.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_RBT_SexoM.setText("M");
+        Tab_MP.add(MP_RBT_SexoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
+
+        CP_Sexo.add(MP_RBT_SexoF);
+        MP_RBT_SexoF.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_RBT_SexoF.setText("F");
+        Tab_MP.add(MP_RBT_SexoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
+
+        CP_EstadoCivil.add(MP_RBT_EstadoSoltero);
+        MP_RBT_EstadoSoltero.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_RBT_EstadoSoltero.setText("Soltero");
+        Tab_MP.add(MP_RBT_EstadoSoltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, -1, -1));
+
+        CP_EstadoCivil.add(MP_RBT_EstadoCasado);
+        MP_RBT_EstadoCasado.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_RBT_EstadoCasado.setText("Casado");
+        Tab_MP.add(MP_RBT_EstadoCasado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, -1));
+
+        MP_SP_Peso.setModel(new javax.swing.SpinnerNumberModel(120.0d, null, null, 0.1d));
+        Tab_MP.add(MP_SP_Peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 80, -1));
+
+        jTextField5.setEditable(false);
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField5.setText("lbs.");
+        Tab_MP.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 40, -1));
+
+        MP_SP_Altura.setModel(new javax.swing.SpinnerNumberModel(150.0d, null, null, 0.1d));
+        Tab_MP.add(MP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
+
+        BT_CP_Modificar.setText("Modificar Persona");
+        BT_CP_Modificar.setEnabled(false);
+        BT_CP_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BT_CP_ModificarMouseClicked(evt);
+            }
+        });
+        Tab_MP.add(BT_CP_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 220, 60));
+
+        jTextField6.setEditable(false);
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField6.setText("cm");
+        Tab_MP.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, -1));
+
+        MP_Panel_Gerente.setBackground(new java.awt.Color(91, 96, 99));
+        MP_Panel_Gerente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MP_Gerente_Usuario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_Panel_Gerente.add(MP_Gerente_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 200, -1));
+
+        MP_Gerente_Cargo.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_Gerente_Cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente de Planta", "Gerente de Sucursal" }));
+        MP_Panel_Gerente.add(MP_Gerente_Cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 170, -1));
+
+        MP_Gerente_Password.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_Panel_Gerente.add(MP_Gerente_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 200, -1));
+
+        jLabel45.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel45.setText("Cargo");
+        MP_Panel_Gerente.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+
+        jLabel46.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel46.setText("Contraseña");
+        MP_Panel_Gerente.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+
+        jLabel47.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel47.setText("Usuario");
+        MP_Panel_Gerente.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("GERENTE");
+        jLabel48.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MP_Panel_Gerente.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 510, -1));
+
+        Tab_MP.add(MP_Panel_Gerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 230));
+
+        MP_Panel_General.setBackground(new java.awt.Color(56, 79, 93));
+        MP_Panel_General.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel49.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel49.setText("Horario");
+        MP_Panel_General.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        jTextField7.setEditable(false);
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField7.setText("Semanas");
+        MP_Panel_General.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 80, -1));
+
+        jLabel50.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel50.setText("Tiempo Trabajando");
+        MP_Panel_General.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        MP_General_TiempoTrabajando.setModel(new javax.swing.SpinnerNumberModel());
+        MP_Panel_General.add(MP_General_TiempoTrabajando, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 70, -1));
+
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.setText("Personal General");
+        jLabel51.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MP_Panel_General.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 510, -1));
+
+        jLabel52.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel52.setText("Ocupación");
+        MP_Panel_General.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+
+        MP_General_Ocupacion.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_Panel_General.add(MP_General_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 200, -1));
+
+        MP_General_Horario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        MP_General_Horario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MP_General_HorarioActionPerformed(evt);
+            }
+        });
+        MP_Panel_General.add(MP_General_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 200, -1));
+
+        Tab_MP.add(MP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 230));
+
+        jLabel53.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setText("MODIFICAR PERSONA");
+        jLabel53.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Tab_MP.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1270, -1));
 
         TabbedPane.addTab("Modificar Persona", Tab_MP);
 
-        javax.swing.GroupLayout Tab_MOLayout = new javax.swing.GroupLayout(Tab_MO);
-        Tab_MO.setLayout(Tab_MOLayout);
-        Tab_MOLayout.setHorizontalGroup(
-            Tab_MOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1270, Short.MAX_VALUE)
-        );
-        Tab_MOLayout.setVerticalGroup(
-            Tab_MOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
-        );
-
+        Tab_MO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         TabbedPane.addTab("Modificar Objeto", Tab_MO);
 
         javax.swing.GroupLayout Tab_JPLayout = new javax.swing.GroupLayout(Tab_JP);
@@ -625,6 +845,54 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CP_General_HorarioActionPerformed
 
+    private void MP_General_HorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MP_General_HorarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MP_General_HorarioActionPerformed
+
+    private void CO_TF_CalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CO_TF_CalidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CO_TF_CalidadActionPerformed
+
+    private void BT_CP_ModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BT_CP_ModificarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BT_CP_ModificarMouseClicked
+
+    private void CP_CB_TipoPersonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CP_CB_TipoPersonaItemStateChanged
+        // TODO add your handling code here:
+        if(evt.getStateChange() == 1){
+            if((Persona) CP_CB_TipoPersona.getSelectedItem() instanceof Gerente){
+                CP_Panel_Gerente.setVisible(true);
+                CP_Panel_Gerente.setEnabled(true);
+                
+                CP_Panel_General.setVisible(false);
+                CP_Panel_General.setEnabled(false);
+            }else if((Persona) CP_CB_TipoPersona.getSelectedItem() instanceof General){
+                CP_Panel_Gerente.setVisible(false);
+                CP_Panel_Gerente.setEnabled(false);
+                
+                CP_Panel_General.setVisible(true);
+                CP_Panel_General.setEnabled(true);
+            }else{
+                JOptionPane.showMessageDialog(this, "Seleccione un tipo de Persona");
+            }
+        }
+    }//GEN-LAST:event_CP_CB_TipoPersonaItemStateChanged
+
+    private void BT_CP_AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BT_CP_AgregarMouseClicked
+        // TODO add your handling code here:
+        try {
+            if(CP_CB_TipoPersona.getSelectedItem() instanceof Gerente){
+                Personas.add(new Gerente)
+            }else if(CP_CB_TipoPersona.getSelectedItem() instanceof General){
+                
+            }else{
+                
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, no se pudo agregar la persona");
+        }
+    }//GEN-LAST:event_BT_CP_AgregarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -646,9 +914,10 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BACKGROUND;
+    private javax.swing.JButton BT_CO_Modificar;
     private javax.swing.JButton BT_CP_Agregar;
+    private javax.swing.JButton BT_CP_Modificar;
     private javax.swing.JButton CO_BT_Color;
-    private javax.swing.JComboBox<String> CO_CB_Calidad;
     private javax.swing.JComboBox<String> CO_CB_PersonaIngreso;
     private javax.swing.JComboBox<String> CO_CB_TipoObjeto;
     private javax.swing.JTextArea CO_Hogar_Descripcion;
@@ -663,7 +932,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton CO_Ropa_Talla_XL;
     private javax.swing.JTextField CO_Ropa_TipoTela;
     private javax.swing.JTextArea CO_TA_Descripcion;
+    private javax.swing.JTextField CO_TF_Calidad;
     private javax.swing.JTextField CO_TF_Marca;
+    private javax.swing.JTextField CO_TF_Size;
     private javax.swing.ButtonGroup CO_Talla_Ropa;
     private javax.swing.ButtonGroup CO_Talla_Zapato;
     private javax.swing.JSpinner CO_Zapato_Comodidad;
@@ -672,7 +943,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton CO_Zapato_Talla_M;
     private javax.swing.JRadioButton CO_Zapato_Talla_S;
     private javax.swing.JRadioButton CO_Zapato_Talla_XL;
-    private javax.swing.JComboBox<String> CP_CB_Tipo;
+    private javax.swing.JComboBox<String> CP_CB_TipoPersona;
     private javax.swing.ButtonGroup CP_EstadoCivil;
     private javax.swing.JFormattedTextField CP_FTF_ID;
     private javax.swing.JTextField CP_General_Horario;
@@ -692,6 +963,24 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner CP_SP_Peso;
     private javax.swing.ButtonGroup CP_Sexo;
     private javax.swing.JTextField CP_TF_Nombre;
+    private javax.swing.JComboBox<String> MP_CB_TipoPersona;
+    private javax.swing.JFormattedTextField MP_FTF_ID;
+    private javax.swing.JTextField MP_General_Horario;
+    private javax.swing.JTextField MP_General_Ocupacion;
+    private javax.swing.JSpinner MP_General_TiempoTrabajando;
+    private javax.swing.JComboBox<String> MP_Gerente_Cargo;
+    private javax.swing.JPasswordField MP_Gerente_Password;
+    private javax.swing.JTextField MP_Gerente_Usuario;
+    private javax.swing.JPanel MP_Panel_General;
+    private javax.swing.JPanel MP_Panel_Gerente;
+    private javax.swing.JRadioButton MP_RBT_EstadoCasado;
+    private javax.swing.JRadioButton MP_RBT_EstadoSoltero;
+    private javax.swing.JRadioButton MP_RBT_SexoF;
+    private javax.swing.JRadioButton MP_RBT_SexoM;
+    private javax.swing.JSpinner MP_SP_Altura;
+    private javax.swing.JSpinner MP_SP_Edad;
+    private javax.swing.JSpinner MP_SP_Peso;
+    private javax.swing.JTextField MP_TF_Nombre;
     private javax.swing.JScrollPane ScrollPane_TextArea;
     private javax.swing.JPanel Tab_CO;
     private javax.swing.JPanel Tab_CP;
@@ -732,8 +1021,25 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -746,5 +1052,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
