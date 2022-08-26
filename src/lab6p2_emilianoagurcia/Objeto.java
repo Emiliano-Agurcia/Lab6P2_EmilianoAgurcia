@@ -18,4 +18,6 @@ public class Objeto {
     String Marca;
     int Size;
     String Calidad;
+    
+    
 }

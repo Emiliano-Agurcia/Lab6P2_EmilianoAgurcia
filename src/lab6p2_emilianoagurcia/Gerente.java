@@ -13,4 +13,97 @@ public class Gerente extends Persona{
     String Usuario;
     String Password;
     String Cargo;
+
+    public Gerente(String Usuario, String Password, String Cargo) {
+        this.Usuario = Usuario;
+        this.Password = Password;
+        this.Cargo = Cargo;
+    }
+
+    public String getUsuario() {
+        return Usuario;
+    }
+
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    public String getCargo() {
+        return Cargo;
+    }
+
+    public void setCargo(String Cargo) {
+        this.Cargo = Cargo;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
+    public char getSexo() {
+        return Sexo;
+    }
+
+    public void setSexo(char Sexo) {
+        this.Sexo = Sexo;
+    }
+
+    public String getEstadoCivil() {
+        return EstadoCivil;
+    }
+
+    public void setEstadoCivil(String EstadoCivil) {
+        this.EstadoCivil = EstadoCivil;
+    }
+
+    public double getAltura() {
+        return Altura;
+    }
+
+    public void setAltura(double Altura) {
+        this.Altura = Altura;
+    }
+
+    public double getPeso() {
+        return Peso;
+    }
+
+    public void setPeso(double Peso) {
+        this.Peso = Peso;
+    }
+
+    @Override
+    public String toString() {
+        return "Gerente{" + "Usuario=" + Usuario + ", Password=" + Password + ", Cargo=" + Cargo + '}';
+    }
+    
+    
 }
