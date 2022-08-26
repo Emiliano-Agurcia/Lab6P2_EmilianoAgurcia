@@ -5,17 +5,12 @@
  */
 package lab6p2_emilianoagurcia;
 
-import java.awt.Color;
-
 /**
  *
  * @author emili
  */
-public class Objeto {
-    Persona Usuario;//Quien ingreso al sistema
-    Color Color;
-    String Descripcion;
-    String Marca;
-    int Size;
-    String Calidad;
+public class Ropa extends Objeto{
+    String Talla;
+    String TipoTela;
+    String Pais;
 }

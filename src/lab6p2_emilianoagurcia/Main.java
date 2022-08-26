@@ -31,9 +31,10 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         CP_Sexo = new javax.swing.ButtonGroup();
+        CP_EstadoCivil = new javax.swing.ButtonGroup();
         BACKGROUND = new javax.swing.JPanel();
-        Tab_ListaObjetos = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        TabbedPane = new javax.swing.JTabbedPane();
+        Tab_CP = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -42,8 +43,6 @@ public class Main extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         CP_CB_Tipo = new javax.swing.JComboBox<>();
         CP_FTF_ID = new javax.swing.JFormattedTextField();
         CP_TF_Nombre = new javax.swing.JTextField();
@@ -54,186 +53,407 @@ public class Main extends javax.swing.JFrame {
         CP_RBT_EstadoCasado = new javax.swing.JRadioButton();
         CP_SP_Peso = new javax.swing.JSpinner();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         CP_SP_Altura = new javax.swing.JSpinner();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
+        BT_CP_Agregar = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        CP_Panel_Gerente = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        CP_CB_Cargo = new javax.swing.JComboBox<>();
+        CP_PF_Password = new javax.swing.JPasswordField();
+        CP_TF_Usuario = new javax.swing.JTextField();
+        CP_Panel_General = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        CP_SP_TiempoTrabajando = new javax.swing.JSpinner();
+        jLabel24 = new javax.swing.JLabel();
+        Tab_CO = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        CO_BT_Color = new javax.swing.JButton();
+        CO_CB_TipoObjeto = new javax.swing.JComboBox<>();
+        CO_CB_PersonaIngreso = new javax.swing.JComboBox<>();
+        CO_TF_Marca = new javax.swing.JTextField();
+        CO_CB_Calidad = new javax.swing.JComboBox<>();
+        Panel_Zapato = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        CO_TA_Descripcion = new javax.swing.JTextArea();
+        Tab_MP = new javax.swing.JPanel();
+        Tab_MO = new javax.swing.JPanel();
+        Tab_JP = new javax.swing.JPanel();
+        Tab_JO = new javax.swing.JPanel();
+        Tab_LP = new javax.swing.JPanel();
+        Tab_LO = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(150, 100));
 
         BACKGROUND.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Tab_CP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel1.setText("Tipo de Persona");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+        Tab_CP.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel2.setText("ID");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        Tab_CP.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
+        Tab_CP.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel4.setText("Edad");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+        Tab_CP.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel5.setText("Sexo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        Tab_CP.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel6.setText("Estado Civil");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+        Tab_CP.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel7.setText("Altura");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+        Tab_CP.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel8.setText("Peso");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
+        Tab_CP.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
 
-        jLabel9.setText("Gerentes");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+        CP_CB_Tipo.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_CB_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona General" }));
+        Tab_CP.add(CP_CB_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 230, -1));
 
-        jLabel10.setText("Personas Generales");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, -1, -1));
+        CP_FTF_ID.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#############"))));
+        Tab_CP.add(CP_FTF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 230, -1));
 
-        CP_CB_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(CP_CB_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 190, -1));
-
-        CP_FTF_ID.setText("jFormattedTextField1");
-        jPanel1.add(CP_FTF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
-        jPanel1.add(CP_TF_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        CP_TF_Nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Tab_CP.add(CP_TF_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 230, -1));
 
         CP_SP_Edad.setModel(new javax.swing.SpinnerNumberModel(20, 10, 100, 1));
-        jPanel1.add(CP_SP_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        Tab_CP.add(CP_SP_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
 
         CP_Sexo.add(CP_RBT_SexoM);
+        CP_RBT_SexoM.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CP_RBT_SexoM.setText("M");
-        jPanel1.add(CP_RBT_SexoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
+        Tab_CP.add(CP_RBT_SexoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
 
         CP_Sexo.add(CP_RBT_SexoF);
+        CP_RBT_SexoF.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CP_RBT_SexoF.setText("F");
-        jPanel1.add(CP_RBT_SexoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+        Tab_CP.add(CP_RBT_SexoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
 
+        CP_EstadoCivil.add(CP_RBT_EstadoSoltero);
+        CP_RBT_EstadoSoltero.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CP_RBT_EstadoSoltero.setText("Soltero");
-        jPanel1.add(CP_RBT_EstadoSoltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+        Tab_CP.add(CP_RBT_EstadoSoltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, -1, -1));
 
+        CP_EstadoCivil.add(CP_RBT_EstadoCasado);
+        CP_RBT_EstadoCasado.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CP_RBT_EstadoCasado.setText("Casado");
-        jPanel1.add(CP_RBT_EstadoCasado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+        Tab_CP.add(CP_RBT_EstadoCasado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, -1));
 
         CP_SP_Peso.setModel(new javax.swing.SpinnerNumberModel(120.0d, null, null, 0.1d));
-        jPanel1.add(CP_SP_Peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 80, -1));
+        Tab_CP.add(CP_SP_Peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 80, -1));
 
         jTextField1.setEditable(false);
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.setText("lbs.");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 40, -1));
+        Tab_CP.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 40, -1));
+
+        CP_SP_Altura.setModel(new javax.swing.SpinnerNumberModel(150.0d, null, null, 0.1d));
+        Tab_CP.add(CP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
+
+        BT_CP_Agregar.setText("Agregar Persona");
+        Tab_CP.add(BT_CP_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, 220, 60));
+
+        jTextField3.setEditable(false);
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField3.setText("cm");
+        Tab_CP.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, -1));
+
+        CP_Panel_Gerente.setBackground(new java.awt.Color(91, 96, 99));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setText("Gerente");
+
+        jLabel11.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel11.setText("Usuario");
+
+        jLabel12.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel12.setText("Contraseña");
+
+        jLabel13.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel13.setText("Cargo");
+
+        CP_CB_Cargo.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_CB_Cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente de Planta", "Gerente de Sucursal" }));
+
+        CP_PF_Password.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_PF_Password.setText("jPasswordField1");
+
+        CP_TF_Usuario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout CP_Panel_GerenteLayout = new javax.swing.GroupLayout(CP_Panel_Gerente);
+        CP_Panel_Gerente.setLayout(CP_Panel_GerenteLayout);
+        CP_Panel_GerenteLayout.setHorizontalGroup(
+            CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addComponent(jLabel9)
+                        .addGap(222, 222, 222))
+                    .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
+                        .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12))
+                        .addGap(23, 23, 23)
+                        .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CP_TF_Usuario)
+                            .addComponent(CP_CB_Cargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CP_PF_Password))
+                        .addGap(98, 98, 98))))
+        );
+        CP_Panel_GerenteLayout.setVerticalGroup(
+            CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CP_TF_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(18, 18, 18)
+                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(CP_PF_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CP_CB_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+
+        Tab_CP.add(CP_Panel_Gerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 500, 230));
+
+        CP_Panel_General.setBackground(new java.awt.Color(56, 79, 93));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setText("Personas Generales");
 
         jTextField2.setEditable(false);
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("cm");
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 40, -1));
+        jTextField2.setText("Semanas");
 
-        CP_SP_Altura.setModel(new javax.swing.SpinnerNumberModel(150.0d, null, null, 0.01d));
-        jPanel1.add(CP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 80, -1));
+        jLabel14.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel14.setText("Ocupación");
 
-        Tab_ListaObjetos.addTab("Crear Persona", jPanel1);
+        jLabel15.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel15.setText("Horario");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabel16.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel16.setText("Tiempo Trabajando");
+
+        CP_SP_TiempoTrabajando.setModel(new javax.swing.SpinnerNumberModel());
+
+        javax.swing.GroupLayout CP_Panel_GeneralLayout = new javax.swing.GroupLayout(CP_Panel_General);
+        CP_Panel_General.setLayout(CP_Panel_GeneralLayout);
+        CP_Panel_GeneralLayout.setHorizontalGroup(
+            CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CP_Panel_GeneralLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addGroup(CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CP_Panel_GeneralLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addGap(156, 156, 156))
+                    .addGroup(CP_Panel_GeneralLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(CP_SP_TiempoTrabajando, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        CP_Panel_GeneralLayout.setVerticalGroup(
+            CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CP_Panel_GeneralLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel10)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addGroup(CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(CP_SP_TiempoTrabajando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 500, 230));
+
+        jLabel24.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("CREAR PERSONA");
+        jLabel24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Tab_CP.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 40, 1270, -1));
+
+        TabbedPane.addTab("Crear Persona", Tab_CP);
+
+        Tab_CO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel17.setText("Tipo de Objeto");
+        Tab_CO.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel18.setText("Color");
+        Tab_CO.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel19.setText("Descripción");
+        Tab_CO.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 80, -1));
+
+        jLabel20.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel20.setText("Marca");
+        Tab_CO.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 50, -1));
+
+        jLabel21.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel21.setText("Tamaño");
+        Tab_CO.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel22.setText("Calidad");
+        Tab_CO.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel23.setText("Persona que lo ingresó");
+        Tab_CO.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        Tab_CO.add(CO_BT_Color, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, 30));
+
+        CO_CB_TipoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Tab_CO.add(CO_CB_TipoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
+
+        CO_CB_PersonaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Tab_CO.add(CO_CB_PersonaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, 20));
+        Tab_CO.add(CO_TF_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+
+        CO_CB_Calidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Tab_CO.add(CO_CB_Calidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, -1, -1));
+
+        Panel_Zapato.setBackground(new java.awt.Color(70, 34, 0));
+        Panel_Zapato.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Tab_CO.add(Panel_Zapato, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 70, 470, 320));
+
+        CO_TA_Descripcion.setColumns(20);
+        CO_TA_Descripcion.setRows(5);
+        jScrollPane2.setViewportView(CO_TA_Descripcion);
+
+        Tab_CO.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 310, 130));
+
+        TabbedPane.addTab("Crear Objeto", Tab_CO);
+
+        javax.swing.GroupLayout Tab_MPLayout = new javax.swing.GroupLayout(Tab_MP);
+        Tab_MP.setLayout(Tab_MPLayout);
+        Tab_MPLayout.setHorizontalGroup(
+            Tab_MPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Tab_MPLayout.setVerticalGroup(
+            Tab_MPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 687, Short.MAX_VALUE)
         );
 
-        Tab_ListaObjetos.addTab("Crear Objeto", jPanel2);
+        TabbedPane.addTab("Modificar Persona", Tab_MP);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Tab_MOLayout = new javax.swing.GroupLayout(Tab_MO);
+        Tab_MO.setLayout(Tab_MOLayout);
+        Tab_MOLayout.setHorizontalGroup(
+            Tab_MOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Tab_MOLayout.setVerticalGroup(
+            Tab_MOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 687, Short.MAX_VALUE)
         );
 
-        Tab_ListaObjetos.addTab("Modificar Persona", jPanel3);
+        TabbedPane.addTab("Modificar Objeto", Tab_MO);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Tab_JPLayout = new javax.swing.GroupLayout(Tab_JP);
+        Tab_JP.setLayout(Tab_JPLayout);
+        Tab_JPLayout.setHorizontalGroup(
+            Tab_JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Tab_JPLayout.setVerticalGroup(
+            Tab_JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 687, Short.MAX_VALUE)
         );
 
-        Tab_ListaObjetos.addTab("Modificar Objeto", jPanel4);
+        TabbedPane.addTab("Jerarquía Personas", Tab_JP);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Tab_JOLayout = new javax.swing.GroupLayout(Tab_JO);
+        Tab_JO.setLayout(Tab_JOLayout);
+        Tab_JOLayout.setHorizontalGroup(
+            Tab_JOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Tab_JOLayout.setVerticalGroup(
+            Tab_JOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 687, Short.MAX_VALUE)
         );
 
-        Tab_ListaObjetos.addTab("Jerarquía Personas", jPanel5);
+        TabbedPane.addTab("Jerarquía Objetos", Tab_JO);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Tab_LPLayout = new javax.swing.GroupLayout(Tab_LP);
+        Tab_LP.setLayout(Tab_LPLayout);
+        Tab_LPLayout.setHorizontalGroup(
+            Tab_LPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Tab_LPLayout.setVerticalGroup(
+            Tab_LPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 687, Short.MAX_VALUE)
         );
 
-        Tab_ListaObjetos.addTab("Jerarquía Objetos", jPanel6);
+        TabbedPane.addTab("Lista Personas", Tab_LP);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Tab_LOLayout = new javax.swing.GroupLayout(Tab_LO);
+        Tab_LO.setLayout(Tab_LOLayout);
+        Tab_LOLayout.setHorizontalGroup(
+            Tab_LOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Tab_LOLayout.setVerticalGroup(
+            Tab_LOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 687, Short.MAX_VALUE)
         );
 
-        Tab_ListaObjetos.addTab("Lista Personas", jPanel7);
+        TabbedPane.addTab("Lista Objetos", Tab_LO);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1270, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
-        );
-
-        Tab_ListaObjetos.addTab("Lista Objetos", jPanel8);
-
-        BACKGROUND.add(Tab_ListaObjetos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 720));
+        BACKGROUND.add(TabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -243,7 +463,9 @@ public class Main extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BACKGROUND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BACKGROUND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -270,8 +492,20 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BACKGROUND;
+    private javax.swing.JButton BT_CP_Agregar;
+    private javax.swing.JButton CO_BT_Color;
+    private javax.swing.JComboBox<String> CO_CB_Calidad;
+    private javax.swing.JComboBox<String> CO_CB_PersonaIngreso;
+    private javax.swing.JComboBox<String> CO_CB_TipoObjeto;
+    private javax.swing.JTextArea CO_TA_Descripcion;
+    private javax.swing.JTextField CO_TF_Marca;
+    private javax.swing.JComboBox<String> CP_CB_Cargo;
     private javax.swing.JComboBox<String> CP_CB_Tipo;
+    private javax.swing.ButtonGroup CP_EstadoCivil;
     private javax.swing.JFormattedTextField CP_FTF_ID;
+    private javax.swing.JPasswordField CP_PF_Password;
+    private javax.swing.JPanel CP_Panel_General;
+    private javax.swing.JPanel CP_Panel_Gerente;
     private javax.swing.JRadioButton CP_RBT_EstadoCasado;
     private javax.swing.JRadioButton CP_RBT_EstadoSoltero;
     private javax.swing.JRadioButton CP_RBT_SexoF;
@@ -279,12 +513,37 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner CP_SP_Altura;
     private javax.swing.JSpinner CP_SP_Edad;
     private javax.swing.JSpinner CP_SP_Peso;
+    private javax.swing.JSpinner CP_SP_TiempoTrabajando;
     private javax.swing.ButtonGroup CP_Sexo;
     private javax.swing.JTextField CP_TF_Nombre;
-    private javax.swing.JTabbedPane Tab_ListaObjetos;
+    private javax.swing.JTextField CP_TF_Usuario;
+    private javax.swing.JPanel Panel_Zapato;
+    private javax.swing.JPanel Tab_CO;
+    private javax.swing.JPanel Tab_CP;
+    private javax.swing.JPanel Tab_JO;
+    private javax.swing.JPanel Tab_JP;
+    private javax.swing.JPanel Tab_LO;
+    private javax.swing.JPanel Tab_LP;
+    private javax.swing.JPanel Tab_MO;
+    private javax.swing.JPanel Tab_MP;
+    private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -292,15 +551,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
