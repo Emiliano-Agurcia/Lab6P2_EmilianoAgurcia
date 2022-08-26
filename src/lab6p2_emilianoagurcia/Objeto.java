@@ -5,18 +5,17 @@
  */
 package lab6p2_emilianoagurcia;
 
+import java.awt.Color;
+
 /**
  *
  * @author emili
  */
-public class Lab6P2_EmilianoAgurcia {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-    }
-    
+public class Objeto {
+    Persona Usuario;//Quien ingreso al sistema
+    Color Color;
+    String Descripcion;
+    String Marca;
+    Size
+    Calidad
 }
