@@ -19,6 +19,17 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
+        //Crear Persona
+        CP_Panel_Gerente.setVisible(false);
+        CP_Panel_General.setVisible(false);
+        //Fin Crear Persona
+        
+        
+        
+        //Crear Objeto
+        
+        //Fin Crear Objeto
     }
 
     /**
@@ -32,6 +43,8 @@ public class Main extends javax.swing.JFrame {
 
         CP_Sexo = new javax.swing.ButtonGroup();
         CP_EstadoCivil = new javax.swing.ButtonGroup();
+        CO_Talla_Zapato = new javax.swing.ButtonGroup();
+        CO_Talla_Ropa = new javax.swing.ButtonGroup();
         BACKGROUND = new javax.swing.JPanel();
         TabbedPane = new javax.swing.JTabbedPane();
         Tab_CP = new javax.swing.JPanel();
@@ -57,20 +70,22 @@ public class Main extends javax.swing.JFrame {
         BT_CP_Agregar = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         CP_Panel_Gerente = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        CP_Gerente_Usuario = new javax.swing.JTextField();
+        CP_Gerente_Cargo = new javax.swing.JComboBox<>();
+        CP_Gerente_Password = new javax.swing.JPasswordField();
         jLabel13 = new javax.swing.JLabel();
-        CP_CB_Cargo = new javax.swing.JComboBox<>();
-        CP_PF_Password = new javax.swing.JPasswordField();
-        CP_TF_Usuario = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         CP_Panel_General = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        CP_SP_TiempoTrabajando = new javax.swing.JSpinner();
+        CP_General_TiempoTrabajando = new javax.swing.JSpinner();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        CP_General_Ocupacion = new javax.swing.JTextField();
+        CP_General_Horario = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         Tab_CO = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -85,8 +100,41 @@ public class Main extends javax.swing.JFrame {
         CO_CB_PersonaIngreso = new javax.swing.JComboBox<>();
         CO_TF_Marca = new javax.swing.JTextField();
         CO_CB_Calidad = new javax.swing.JComboBox<>();
-        Panel_Zapato = new javax.swing.JPanel();
+        CO_Panel_Zapato = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        CO_Zapato_Talla_L = new javax.swing.JRadioButton();
+        CO_Zapato_Talla_XL = new javax.swing.JRadioButton();
+        CO_Zapato_Talla_M = new javax.swing.JRadioButton();
+        CO_Zapato_Talla_S = new javax.swing.JRadioButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        CO_Zapato_Descripcion = new javax.swing.JTextArea();
+        CO_Zapato_Comodidad = new javax.swing.JSpinner();
+        CO_Panel_Ropa = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        CO_Ropa_Talla_L = new javax.swing.JRadioButton();
+        CO_Ropa_Talla_XL = new javax.swing.JRadioButton();
+        CO_Ropa_Talla_M = new javax.swing.JRadioButton();
+        CO_Ropa_Talla_S = new javax.swing.JRadioButton();
+        CO_Ropa_TipoTela = new javax.swing.JTextField();
+        CO_Ropa_Pais = new javax.swing.JTextField();
+        CO_Panel_Hogar = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        CO_Hogar_Descripcion = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
+        CO_Hogar_Instrucciones = new javax.swing.JTextArea();
+        jSpinner1 = new javax.swing.JSpinner();
+        jTextField4 = new javax.swing.JTextField();
+        ScrollPane_TextArea = new javax.swing.JScrollPane();
         CO_TA_Descripcion = new javax.swing.JTextArea();
         Tab_MP = new javax.swing.JPanel();
         Tab_MO = new javax.swing.JPanel();
@@ -179,7 +227,7 @@ public class Main extends javax.swing.JFrame {
         Tab_CP.add(CP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
 
         BT_CP_Agregar.setText("Agregar Persona");
-        Tab_CP.add(BT_CP_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, 220, 60));
+        Tab_CP.add(BT_CP_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 220, 60));
 
         jTextField3.setEditable(false);
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -187,138 +235,85 @@ public class Main extends javax.swing.JFrame {
         Tab_CP.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, -1));
 
         CP_Panel_Gerente.setBackground(new java.awt.Color(91, 96, 99));
+        CP_Panel_Gerente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setText("Gerente");
+        CP_Gerente_Usuario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_Panel_Gerente.add(CP_Gerente_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 200, -1));
 
-        jLabel11.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel11.setText("Usuario");
+        CP_Gerente_Cargo.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_Gerente_Cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente de Planta", "Gerente de Sucursal" }));
+        CP_Panel_Gerente.add(CP_Gerente_Cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 170, -1));
 
-        jLabel12.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel12.setText("Contraseña");
+        CP_Gerente_Password.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_Panel_Gerente.add(CP_Gerente_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 200, -1));
 
         jLabel13.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel13.setText("Cargo");
+        CP_Panel_Gerente.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
 
-        CP_CB_Cargo.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CP_CB_Cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente de Planta", "Gerente de Sucursal" }));
+        jLabel12.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel12.setText("Contraseña");
+        CP_Panel_Gerente.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
-        CP_PF_Password.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CP_PF_Password.setText("jPasswordField1");
+        jLabel11.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel11.setText("Usuario");
+        CP_Panel_Gerente.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
 
-        CP_TF_Usuario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("GERENTE");
+        jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CP_Panel_Gerente.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 510, -1));
 
-        javax.swing.GroupLayout CP_Panel_GerenteLayout = new javax.swing.GroupLayout(CP_Panel_Gerente);
-        CP_Panel_Gerente.setLayout(CP_Panel_GerenteLayout);
-        CP_Panel_GerenteLayout.setHorizontalGroup(
-            CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel9)
-                        .addGap(222, 222, 222))
-                    .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
-                        .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
-                        .addGap(23, 23, 23)
-                        .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CP_TF_Usuario)
-                            .addComponent(CP_CB_Cargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CP_PF_Password))
-                        .addGap(98, 98, 98))))
-        );
-        CP_Panel_GerenteLayout.setVerticalGroup(
-            CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CP_Panel_GerenteLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CP_TF_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
-                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(CP_PF_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(CP_Panel_GerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CP_CB_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-
-        Tab_CP.add(CP_Panel_Gerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 500, 230));
+        Tab_CP.add(CP_Panel_Gerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 230));
 
         CP_Panel_General.setBackground(new java.awt.Color(56, 79, 93));
+        CP_Panel_General.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setText("Personas Generales");
+        jLabel15.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel15.setText("Horario");
+        CP_Panel_General.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
         jTextField2.setEditable(false);
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("Semanas");
-
-        jLabel14.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel14.setText("Ocupación");
-
-        jLabel15.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel15.setText("Horario");
+        CP_Panel_General.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 80, -1));
 
         jLabel16.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel16.setText("Tiempo Trabajando");
+        CP_Panel_General.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
-        CP_SP_TiempoTrabajando.setModel(new javax.swing.SpinnerNumberModel());
+        CP_General_TiempoTrabajando.setModel(new javax.swing.SpinnerNumberModel());
+        CP_Panel_General.add(CP_General_TiempoTrabajando, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 70, -1));
 
-        javax.swing.GroupLayout CP_Panel_GeneralLayout = new javax.swing.GroupLayout(CP_Panel_General);
-        CP_Panel_General.setLayout(CP_Panel_GeneralLayout);
-        CP_Panel_GeneralLayout.setHorizontalGroup(
-            CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CP_Panel_GeneralLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addGroup(CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CP_Panel_GeneralLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addGap(156, 156, 156))
-                    .addGroup(CP_Panel_GeneralLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(CP_SP_TiempoTrabajando, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        CP_Panel_GeneralLayout.setVerticalGroup(
-            CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CP_Panel_GeneralLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel10)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
-                .addGroup(CP_Panel_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(CP_SP_TiempoTrabajando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Personas Generales");
+        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CP_Panel_General.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 510, -1));
 
-        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 500, 230));
+        jLabel14.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel14.setText("Ocupación");
+        CP_Panel_General.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+
+        CP_General_Ocupacion.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_Panel_General.add(CP_General_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 200, -1));
+
+        CP_General_Horario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_General_Horario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CP_General_HorarioActionPerformed(evt);
+            }
+        });
+        CP_Panel_General.add(CP_General_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 200, -1));
+
+        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 230));
 
         jLabel24.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("CREAR PERSONA");
         jLabel24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Tab_CP.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 40, 1270, -1));
+        Tab_CP.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1270, -1));
 
         TabbedPane.addTab("Crear Persona", Tab_CP);
 
@@ -354,24 +349,171 @@ public class Main extends javax.swing.JFrame {
         Tab_CO.add(CO_BT_Color, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, 30));
 
         CO_CB_TipoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Tab_CO.add(CO_CB_TipoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
+        Tab_CO.add(CO_CB_TipoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
 
+        CO_CB_PersonaIngreso.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CO_CB_PersonaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Tab_CO.add(CO_CB_PersonaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, 20));
-        Tab_CO.add(CO_TF_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
+        CO_TF_Marca.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        Tab_CO.add(CO_TF_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 310, -1));
+
+        CO_CB_Calidad.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CO_CB_Calidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Tab_CO.add(CO_CB_Calidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, -1, -1));
 
-        Panel_Zapato.setBackground(new java.awt.Color(70, 34, 0));
-        Panel_Zapato.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Tab_CO.add(Panel_Zapato, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 70, 470, 320));
+        CO_Panel_Zapato.setBackground(new java.awt.Color(51, 51, 51));
+        CO_Panel_Zapato.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel25.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("ZAPATO");
+        jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CO_Panel_Zapato.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 590, -1));
+
+        jLabel26.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel26.setText("Talla");
+        CO_Panel_Zapato.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel27.setText("Comodidad");
+        CO_Panel_Zapato.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+
+        jLabel28.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel28.setText("Descripción de la Suela");
+        CO_Panel_Zapato.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        CO_Talla_Zapato.add(CO_Zapato_Talla_L);
+        CO_Zapato_Talla_L.setText("L");
+        CO_Panel_Zapato.add(CO_Zapato_Talla_L, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
+
+        CO_Talla_Zapato.add(CO_Zapato_Talla_XL);
+        CO_Zapato_Talla_XL.setText("XL");
+        CO_Zapato_Talla_XL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CO_Zapato_Talla_XLActionPerformed(evt);
+            }
+        });
+        CO_Panel_Zapato.add(CO_Zapato_Talla_XL, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 110, -1, -1));
+
+        CO_Talla_Zapato.add(CO_Zapato_Talla_M);
+        CO_Zapato_Talla_M.setText("M");
+        CO_Panel_Zapato.add(CO_Zapato_Talla_M, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
+
+        CO_Talla_Zapato.add(CO_Zapato_Talla_S);
+        CO_Zapato_Talla_S.setText("S");
+        CO_Panel_Zapato.add(CO_Zapato_Talla_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+
+        CO_Zapato_Descripcion.setColumns(20);
+        CO_Zapato_Descripcion.setRows(5);
+        jScrollPane3.setViewportView(CO_Zapato_Descripcion);
+
+        CO_Panel_Zapato.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+
+        CO_Zapato_Comodidad.setModel(new javax.swing.SpinnerNumberModel(5, 1, 10, 1));
+        CO_Panel_Zapato.add(CO_Zapato_Comodidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+
+        Tab_CO.add(CO_Panel_Zapato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 580, 320));
+
+        CO_Panel_Ropa.setBackground(new java.awt.Color(51, 51, 51));
+        CO_Panel_Ropa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel29.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("ROPA");
+        jLabel29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CO_Panel_Ropa.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, -1));
+
+        jLabel30.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel30.setText("País de Elaboración");
+        CO_Panel_Ropa.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel31.setText("Talla");
+        CO_Panel_Ropa.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+
+        jLabel32.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel32.setText("Tipo de Tela");
+        CO_Panel_Ropa.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
+
+        CO_Talla_Ropa.add(CO_Ropa_Talla_L);
+        CO_Ropa_Talla_L.setText("L");
+        CO_Panel_Ropa.add(CO_Ropa_Talla_L, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+
+        CO_Talla_Ropa.add(CO_Ropa_Talla_XL);
+        CO_Ropa_Talla_XL.setText("XL");
+        CO_Ropa_Talla_XL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CO_Ropa_Talla_XLActionPerformed(evt);
+            }
+        });
+        CO_Panel_Ropa.add(CO_Ropa_Talla_XL, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
+
+        CO_Talla_Ropa.add(CO_Ropa_Talla_M);
+        CO_Ropa_Talla_M.setText("M");
+        CO_Panel_Ropa.add(CO_Ropa_Talla_M, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
+        CO_Talla_Ropa.add(CO_Ropa_Talla_S);
+        CO_Ropa_Talla_S.setText("S");
+        CO_Panel_Ropa.add(CO_Ropa_Talla_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+
+        CO_Ropa_TipoTela.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CO_Panel_Ropa.add(CO_Ropa_TipoTela, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 160, -1));
+
+        CO_Ropa_Pais.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CO_Panel_Ropa.add(CO_Ropa_Pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
+
+        Tab_CO.add(CO_Panel_Ropa, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 580, 320));
+
+        CO_Panel_Hogar.setBackground(new java.awt.Color(51, 51, 51));
+        CO_Panel_Hogar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel33.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("HOGAR");
+        jLabel33.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CO_Panel_Hogar.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 20, 580, -1));
+
+        jLabel34.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel34.setText("Descripción");
+        CO_Panel_Hogar.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+
+        jLabel35.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel35.setText("Tiempo de Garantía");
+        CO_Panel_Hogar.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel36.setText("Instrucciones");
+        CO_Panel_Hogar.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+
+        CO_Hogar_Descripcion.setColumns(20);
+        CO_Hogar_Descripcion.setRows(5);
+        jScrollPane1.setViewportView(CO_Hogar_Descripcion);
+
+        CO_Panel_Hogar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+
+        CO_Hogar_Instrucciones.setColumns(20);
+        CO_Hogar_Instrucciones.setRows(5);
+        jScrollPane2.setViewportView(CO_Hogar_Instrucciones);
+
+        CO_Panel_Hogar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(6, 6, null, 6));
+        CO_Panel_Hogar.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+
+        jTextField4.setEditable(false);
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField4.setText("cm");
+        CO_Panel_Hogar.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 40, -1));
+
+        Tab_CO.add(CO_Panel_Hogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 580, 320));
 
         CO_TA_Descripcion.setColumns(20);
+        CO_TA_Descripcion.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         CO_TA_Descripcion.setRows(5);
-        jScrollPane2.setViewportView(CO_TA_Descripcion);
+        ScrollPane_TextArea.setViewportView(CO_TA_Descripcion);
 
-        Tab_CO.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 310, 130));
+        Tab_CO.add(ScrollPane_TextArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 310, 130));
 
         TabbedPane.addTab("Crear Objeto", Tab_CO);
 
@@ -471,6 +613,18 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CO_Zapato_Talla_XLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CO_Zapato_Talla_XLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CO_Zapato_Talla_XLActionPerformed
+
+    private void CO_Ropa_Talla_XLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CO_Ropa_Talla_XLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CO_Ropa_Talla_XLActionPerformed
+
+    private void CP_General_HorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CP_General_HorarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CP_General_HorarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -497,13 +651,36 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CO_CB_Calidad;
     private javax.swing.JComboBox<String> CO_CB_PersonaIngreso;
     private javax.swing.JComboBox<String> CO_CB_TipoObjeto;
+    private javax.swing.JTextArea CO_Hogar_Descripcion;
+    private javax.swing.JTextArea CO_Hogar_Instrucciones;
+    private javax.swing.JPanel CO_Panel_Hogar;
+    private javax.swing.JPanel CO_Panel_Ropa;
+    private javax.swing.JPanel CO_Panel_Zapato;
+    private javax.swing.JTextField CO_Ropa_Pais;
+    private javax.swing.JRadioButton CO_Ropa_Talla_L;
+    private javax.swing.JRadioButton CO_Ropa_Talla_M;
+    private javax.swing.JRadioButton CO_Ropa_Talla_S;
+    private javax.swing.JRadioButton CO_Ropa_Talla_XL;
+    private javax.swing.JTextField CO_Ropa_TipoTela;
     private javax.swing.JTextArea CO_TA_Descripcion;
     private javax.swing.JTextField CO_TF_Marca;
-    private javax.swing.JComboBox<String> CP_CB_Cargo;
+    private javax.swing.ButtonGroup CO_Talla_Ropa;
+    private javax.swing.ButtonGroup CO_Talla_Zapato;
+    private javax.swing.JSpinner CO_Zapato_Comodidad;
+    private javax.swing.JTextArea CO_Zapato_Descripcion;
+    private javax.swing.JRadioButton CO_Zapato_Talla_L;
+    private javax.swing.JRadioButton CO_Zapato_Talla_M;
+    private javax.swing.JRadioButton CO_Zapato_Talla_S;
+    private javax.swing.JRadioButton CO_Zapato_Talla_XL;
     private javax.swing.JComboBox<String> CP_CB_Tipo;
     private javax.swing.ButtonGroup CP_EstadoCivil;
     private javax.swing.JFormattedTextField CP_FTF_ID;
-    private javax.swing.JPasswordField CP_PF_Password;
+    private javax.swing.JTextField CP_General_Horario;
+    private javax.swing.JTextField CP_General_Ocupacion;
+    private javax.swing.JSpinner CP_General_TiempoTrabajando;
+    private javax.swing.JComboBox<String> CP_Gerente_Cargo;
+    private javax.swing.JPasswordField CP_Gerente_Password;
+    private javax.swing.JTextField CP_Gerente_Usuario;
     private javax.swing.JPanel CP_Panel_General;
     private javax.swing.JPanel CP_Panel_Gerente;
     private javax.swing.JRadioButton CP_RBT_EstadoCasado;
@@ -513,11 +690,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner CP_SP_Altura;
     private javax.swing.JSpinner CP_SP_Edad;
     private javax.swing.JSpinner CP_SP_Peso;
-    private javax.swing.JSpinner CP_SP_TiempoTrabajando;
     private javax.swing.ButtonGroup CP_Sexo;
     private javax.swing.JTextField CP_TF_Nombre;
-    private javax.swing.JTextField CP_TF_Usuario;
-    private javax.swing.JPanel Panel_Zapato;
+    private javax.swing.JScrollPane ScrollPane_TextArea;
     private javax.swing.JPanel Tab_CO;
     private javax.swing.JPanel Tab_CP;
     private javax.swing.JPanel Tab_JO;
@@ -544,16 +719,32 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
