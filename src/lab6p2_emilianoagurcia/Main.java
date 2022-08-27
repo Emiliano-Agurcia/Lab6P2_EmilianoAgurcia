@@ -8,6 +8,7 @@ package lab6p2_emilianoagurcia;
 import com.formdev.flatlaf.FlatDarkLaf;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -65,7 +66,6 @@ Random random = new Random();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         CP_CB_TipoPersona = new javax.swing.JComboBox<>();
-        CP_FTF_ID = new javax.swing.JFormattedTextField();
         CP_TF_Nombre = new javax.swing.JTextField();
         CP_SP_Edad = new javax.swing.JSpinner();
         CP_RBT_SexoM = new javax.swing.JRadioButton();
@@ -77,14 +77,6 @@ Random random = new Random();
         CP_SP_Altura = new javax.swing.JSpinner();
         BT_CP_Agregar = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
-        CP_Panel_Gerente = new javax.swing.JPanel();
-        CP_Gerente_Usuario = new javax.swing.JTextField();
-        CP_Gerente_Cargo = new javax.swing.JComboBox<>();
-        CP_Gerente_Password = new javax.swing.JPasswordField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         CP_Panel_General = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -94,7 +86,19 @@ Random random = new Random();
         jLabel14 = new javax.swing.JLabel();
         CP_General_Ocupacion = new javax.swing.JTextField();
         CP_General_Horario = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        CP_General_Sueldo = new javax.swing.JSpinner();
+        jTextField8 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
+        CP_Panel_Gerente = new javax.swing.JPanel();
+        CP_Gerente_Usuario = new javax.swing.JTextField();
+        CP_Gerente_Cargo = new javax.swing.JComboBox<>();
+        CP_Gerente_Password = new javax.swing.JPasswordField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        CP_TF_ID = new javax.swing.JTextField();
         Tab_CO = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -232,16 +236,13 @@ Random random = new Random();
         Tab_CP.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
 
         CP_CB_TipoPersona.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CP_CB_TipoPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona General" }));
+        CP_CB_TipoPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Personal General" }));
         CP_CB_TipoPersona.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CP_CB_TipoPersonaItemStateChanged(evt);
             }
         });
         Tab_CP.add(CP_CB_TipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 230, -1));
-
-        CP_FTF_ID.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#############"))));
-        Tab_CP.add(CP_FTF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 230, -1));
 
         CP_TF_Nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Tab_CP.add(CP_TF_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 230, -1));
@@ -251,6 +252,7 @@ Random random = new Random();
 
         CP_Sexo.add(CP_RBT_SexoM);
         CP_RBT_SexoM.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_RBT_SexoM.setSelected(true);
         CP_RBT_SexoM.setText("M");
         Tab_CP.add(CP_RBT_SexoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
 
@@ -261,6 +263,7 @@ Random random = new Random();
 
         CP_EstadoCivil.add(CP_RBT_EstadoSoltero);
         CP_RBT_EstadoSoltero.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_RBT_EstadoSoltero.setSelected(true);
         CP_RBT_EstadoSoltero.setText("Soltero");
         Tab_CP.add(CP_RBT_EstadoSoltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, -1, -1));
 
@@ -281,7 +284,6 @@ Random random = new Random();
         Tab_CP.add(CP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
 
         BT_CP_Agregar.setText("Agregar Persona");
-        BT_CP_Agregar.setEnabled(false);
         BT_CP_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BT_CP_AgregarMouseClicked(evt);
@@ -293,6 +295,66 @@ Random random = new Random();
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField3.setText("cm");
         Tab_CP.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, -1));
+
+        CP_Panel_General.setBackground(new java.awt.Color(56, 79, 93));
+        CP_Panel_General.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel15.setText("Horario");
+        CP_Panel_General.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        jTextField2.setEditable(false);
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("Lps.");
+        CP_Panel_General.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 80, -1));
+
+        jLabel16.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel16.setText("Tiempo Trabajando");
+        CP_Panel_General.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        CP_General_TiempoTrabajando.setModel(new javax.swing.SpinnerNumberModel());
+        CP_Panel_General.add(CP_General_TiempoTrabajando, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 70, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Personas Generales");
+        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        CP_Panel_General.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 510, -1));
+
+        jLabel14.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel14.setText("Ocupación");
+        CP_Panel_General.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+
+        CP_General_Ocupacion.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_Panel_General.add(CP_General_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 200, -1));
+
+        CP_General_Horario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        CP_General_Horario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CP_General_HorarioActionPerformed(evt);
+            }
+        });
+        CP_Panel_General.add(CP_General_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 200, -1));
+
+        jLabel54.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabel54.setText("Sueldo");
+        CP_Panel_General.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
+
+        CP_General_Sueldo.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
+        CP_Panel_General.add(CP_General_Sueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 70, -1));
+
+        jTextField8.setEditable(false);
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField8.setText("Semanas");
+        CP_Panel_General.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 80, -1));
+
+        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, 240));
+
+        jLabel24.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("CREAR PERSONA");
+        jLabel24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Tab_CP.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1270, -1));
 
         CP_Panel_Gerente.setBackground(new java.awt.Color(91, 96, 99));
         CP_Panel_Gerente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -325,55 +387,10 @@ Random random = new Random();
         jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         CP_Panel_Gerente.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 510, -1));
 
-        Tab_CP.add(CP_Panel_Gerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 230));
+        Tab_CP.add(CP_Panel_Gerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 240));
 
-        CP_Panel_General.setBackground(new java.awt.Color(56, 79, 93));
-        CP_Panel_General.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel15.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel15.setText("Horario");
-        CP_Panel_General.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
-
-        jTextField2.setEditable(false);
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Semanas");
-        CP_Panel_General.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 80, -1));
-
-        jLabel16.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel16.setText("Tiempo Trabajando");
-        CP_Panel_General.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
-
-        CP_General_TiempoTrabajando.setModel(new javax.swing.SpinnerNumberModel());
-        CP_Panel_General.add(CP_General_TiempoTrabajando, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 70, -1));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Personas Generales");
-        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        CP_Panel_General.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 510, -1));
-
-        jLabel14.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabel14.setText("Ocupación");
-        CP_Panel_General.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
-
-        CP_General_Ocupacion.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CP_Panel_General.add(CP_General_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 200, -1));
-
-        CP_General_Horario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        CP_General_Horario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CP_General_HorarioActionPerformed(evt);
-            }
-        });
-        CP_Panel_General.add(CP_General_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 200, -1));
-
-        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 510, 230));
-
-        jLabel24.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("CREAR PERSONA");
-        jLabel24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Tab_CP.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1270, -1));
+        CP_TF_ID.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        Tab_CP.add(CP_TF_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 230, -1));
 
         TabbedPane.addTab("Crear Persona", Tab_CP);
 
@@ -410,6 +427,11 @@ Random random = new Random();
 
         CO_CB_TipoObjeto.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         CO_CB_TipoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Zapato", "Ropa", "Hogar" }));
+        CO_CB_TipoObjeto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CO_CB_TipoObjetoItemStateChanged(evt);
+            }
+        });
         Tab_CO.add(CO_CB_TipoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 110, 20));
 
         CO_CB_PersonaIngreso.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
@@ -425,7 +447,7 @@ Random random = new Random();
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("ZAPATO");
         jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        CO_Panel_Zapato.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 590, -1));
+        CO_Panel_Zapato.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 580, -1));
 
         jLabel26.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel26.setText("Talla");
@@ -478,7 +500,7 @@ Random random = new Random();
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel29.setText("ROPA");
         jLabel29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        CO_Panel_Ropa.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 580, -1));
+        CO_Panel_Ropa.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 580, -1));
 
         jLabel30.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel30.setText("País de Elaboración");
@@ -528,11 +550,11 @@ Random random = new Random();
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel33.setText("HOGAR");
         jLabel33.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        CO_Panel_Hogar.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 20, 580, -1));
+        CO_Panel_Hogar.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 580, -1));
 
         jLabel34.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel34.setText("Descripción");
-        CO_Panel_Hogar.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+        CO_Panel_Hogar.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
         jLabel35.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel35.setText("Tiempo de Garantía");
@@ -540,19 +562,19 @@ Random random = new Random();
 
         jLabel36.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel36.setText("Instrucciones");
-        CO_Panel_Hogar.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        CO_Panel_Hogar.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
         CO_Hogar_Descripcion.setColumns(20);
         CO_Hogar_Descripcion.setRows(5);
         jScrollPane1.setViewportView(CO_Hogar_Descripcion);
 
-        CO_Panel_Hogar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        CO_Panel_Hogar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
 
         CO_Hogar_Instrucciones.setColumns(20);
         CO_Hogar_Instrucciones.setRows(5);
         jScrollPane2.setViewportView(CO_Hogar_Instrucciones);
 
-        CO_Panel_Hogar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        CO_Panel_Hogar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(6, 6, null, 6));
         CO_Panel_Hogar.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
@@ -667,7 +689,6 @@ Random random = new Random();
         Tab_MP.add(MP_SP_Altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
 
         BT_CP_Modificar.setText("Modificar Persona");
-        BT_CP_Modificar.setEnabled(false);
         BT_CP_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BT_CP_ModificarMouseClicked(evt);
@@ -863,20 +884,12 @@ Random random = new Random();
     private void CP_CB_TipoPersonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CP_CB_TipoPersonaItemStateChanged
         // TODO add your handling code here:
         if(evt.getStateChange() == 1){
-            if((Persona) CP_CB_TipoPersona.getSelectedItem() instanceof Gerente){
+            if(CP_CB_TipoPersona.getSelectedItem().equals("Gerente")){
                 CP_Panel_Gerente.setVisible(true);
-                CP_Panel_Gerente.setEnabled(true);
-                
                 CP_Panel_General.setVisible(false);
-                CP_Panel_General.setEnabled(false);
-            }else if((Persona) CP_CB_TipoPersona.getSelectedItem() instanceof General){
+            }else if(CP_CB_TipoPersona.getSelectedItem().equals("Personal General")){
                 CP_Panel_Gerente.setVisible(false);
-                CP_Panel_Gerente.setEnabled(false);
-                
                 CP_Panel_General.setVisible(true);
-                CP_Panel_General.setEnabled(true);
-            }else{
-                JOptionPane.showMessageDialog(this, "Seleccione un tipo de Persona");
             }
         }
     }//GEN-LAST:event_CP_CB_TipoPersonaItemStateChanged
@@ -898,39 +911,128 @@ Random random = new Random();
         }else{
             Sexo = 'F';
         }
-        
-        String ID = Integer.toString(1000+random.nextInt(9000));
-        while(IDs.contains(ID)){
-            ID = Integer.toString(1000+random.nextInt(9000));
-        }
-        IDs.add(ID);
-        
-        
-        try {
-            if(CP_CB_TipoPersona.getSelectedItem().toString().equals("Gerente")){
-                Personas.add(
-                        new Gerente(
-                                CP_Gerente_Usuario.getText(), 
-                                CP_Gerente_Password.getText(), 
-                                CP_Gerente_Cargo.getSelectedItem().toString(), 
-                                ID, 
-                                CP_TF_Nombre.getText(), 
-                                (Integer) CP_SP_Edad.getValue(), 
-                                Sexo, 
-                                EstadoCivil, 
-                                (Double) CP_SP_Altura.getValue(), 
-                                (Double) CP_SP_Peso.getValue()
-                        )
-                );
-            }else if(CP_CB_TipoPersona.getSelectedItem().toString().equals("General")){
+
+        if (IDs.contains(CP_TF_ID.getText())) {
+            JOptionPane.showMessageDialog(this, "El ID ya ha sido ingresado, intente denuevo");
+        } else {
+            try {
+                if (CP_CB_TipoPersona.getSelectedItem().toString().equals("Gerente")) {
+                    if(CP_TF_ID.getText().isEmpty() || CP_TF_Nombre.getText().isEmpty()
+                     ||CP_Gerente_Usuario.getText().isEmpty() || CP_Gerente_Password.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(this, "Llene todos los Campos");
+                    }else{
+                        Personas.add(
+                                new Gerente(
+                                        CP_Gerente_Usuario.getText(),
+                                        CP_Gerente_Password.getText(),
+                                        CP_Gerente_Cargo.getSelectedItem().toString(),
+                                        CP_TF_ID.getText(),
+                                        CP_TF_Nombre.getText(),
+                                        (Integer) CP_SP_Edad.getValue(),
+                                        Sexo,
+                                        EstadoCivil,
+                                        (Double) CP_SP_Altura.getValue(),
+                                        (Double) CP_SP_Peso.getValue()
+                                )
+                        );    
+                        CP_CB_TipoPersona.setSelectedIndex(0);
+                        CP_TF_ID.setText("");
+                        CP_TF_Nombre.setText("");
+                        CP_SP_Edad.setValue(20);
+                        CP_RBT_SexoM.setSelected(true);
+                        CP_RBT_EstadoSoltero.setSelected(true);
+                        CP_SP_Altura.setValue(150);
+                        CP_SP_Peso.setValue(120);
+                        
+                        CP_Gerente_Usuario.setText("");
+                        CP_Gerente_Password.setText("");
+                        CP_Gerente_Cargo.setSelectedIndex(0);
+                        
+                        CP_Panel_General.setVisible(false);
+                        CP_Panel_Gerente.setVisible(false);
+                    }
+                    
+                } else if (CP_CB_TipoPersona.getSelectedItem().toString().equals("Personal General")) {
+                    if(CP_TF_ID.getText().isEmpty() || CP_TF_Nombre.getText().isEmpty()
+                    || CP_General_Ocupacion.getText().isEmpty() || CP_General_Horario.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(this, "Llene todos los Campos");
+                    }else{
+                        Personas.add(
+                                new General(
+                                        CP_General_Ocupacion.getText(),
+                                        CP_General_Horario.getText(),
+                                        (Integer) CP_General_TiempoTrabajando.getValue(),
+                                        (Double) CP_General_Sueldo.getValue(),
+                                        CP_TF_ID.getText(),
+                                        CP_TF_Nombre.getText(),
+                                        (Integer) CP_SP_Edad.getValue(),
+                                        Sexo,
+                                        EstadoCivil,
+                                        (Double) CP_SP_Altura.getValue(),
+                                        (Double) CP_SP_Peso.getValue()
+                                )
+                        );    
+                        CP_CB_TipoPersona.setSelectedIndex(0);
+                        CP_TF_ID.setText("");
+                        CP_TF_Nombre.setText("");
+                        CP_SP_Edad.setValue(20);
+                        CP_RBT_SexoM.setSelected(true);
+                        CP_RBT_EstadoSoltero.setSelected(true);
+                        CP_SP_Altura.setValue(150);
+                        CP_SP_Peso.setValue(120);
+                        
+                        CP_General_Ocupacion.setText("");
+                        CP_General_Horario.setText("");
+                        CP_General_TiempoTrabajando.setValue(0);
+                        CP_General_Sueldo.setValue(0);
+                        
+                        CP_Panel_General.setVisible(false);
+                        CP_Panel_Gerente.setVisible(false);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Elija un tipo de Persona");
+                }
                 
-            }else{
                 
+                
+                //Panel Personal General
+                
+                //Fin Panel Personal General
+                
+                //Panel Gerente
+                
+                //Fin Panel Gerente
+                
+                IDs.add(CP_TF_ID.getText());
+                
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error, no se pudo agregar la persona");
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error, no se pudo agregar la persona");
         }
     }//GEN-LAST:event_BT_CP_AgregarMouseClicked
+
+    private void CO_CB_TipoObjetoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CO_CB_TipoObjetoItemStateChanged
+        // TODO add your handling code here:
+        if(evt.getStateChange() == 1){
+            if(CO_CB_TipoObjeto.getSelectedItem().toString().equals("Zapato")){
+                CO_Panel_Zapato.setVisible(true);
+                CO_Panel_Hogar.setVisible(false);
+                CO_Panel_Ropa.setVisible(false);
+            }else if(CO_CB_TipoObjeto.getSelectedItem().toString().equals("Ropa")){
+                CO_Panel_Zapato.setVisible(false);
+                CO_Panel_Hogar.setVisible(false);
+                CO_Panel_Ropa.setVisible(true);
+                
+            }else if(CO_CB_TipoObjeto.getSelectedItem().toString().equals("Hogar")){
+                CO_Panel_Zapato.setVisible(false);
+                CO_Panel_Hogar.setVisible(true);
+                CO_Panel_Ropa.setVisible(false);
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "Elija un tipo de Objeto");
+            }
+        }
+    }//GEN-LAST:event_CO_CB_TipoObjetoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -984,9 +1086,9 @@ Random random = new Random();
     private javax.swing.JRadioButton CO_Zapato_Talla_XL;
     private javax.swing.JComboBox<String> CP_CB_TipoPersona;
     private javax.swing.ButtonGroup CP_EstadoCivil;
-    private javax.swing.JFormattedTextField CP_FTF_ID;
     private javax.swing.JTextField CP_General_Horario;
     private javax.swing.JTextField CP_General_Ocupacion;
+    private javax.swing.JSpinner CP_General_Sueldo;
     private javax.swing.JSpinner CP_General_TiempoTrabajando;
     private javax.swing.JComboBox<String> CP_Gerente_Cargo;
     private javax.swing.JPasswordField CP_Gerente_Password;
@@ -1001,6 +1103,7 @@ Random random = new Random();
     private javax.swing.JSpinner CP_SP_Edad;
     private javax.swing.JSpinner CP_SP_Peso;
     private javax.swing.ButtonGroup CP_Sexo;
+    private javax.swing.JTextField CP_TF_ID;
     private javax.swing.JTextField CP_TF_Nombre;
     private javax.swing.JComboBox<String> MP_CB_TipoPersona;
     private javax.swing.JFormattedTextField MP_FTF_ID;
@@ -1079,6 +1182,7 @@ Random random = new Random();
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1094,5 +1198,6 @@ Random random = new Random();
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }
