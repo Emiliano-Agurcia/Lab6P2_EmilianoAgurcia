@@ -27,5 +27,61 @@ public class Persona {
         this.Altura = Altura;
         this.Peso = Peso;
     }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
+    public char getSexo() {
+        return Sexo;
+    }
+
+    public void setSexo(char Sexo) {
+        this.Sexo = Sexo;
+    }
+
+    public String getEstadoCivil() {
+        return EstadoCivil;
+    }
+
+    public void setEstadoCivil(String EstadoCivil) {
+        this.EstadoCivil = EstadoCivil;
+    }
+
+    public double getAltura() {
+        return Altura;
+    }
+
+    public void setAltura(double Altura) {
+        this.Altura = Altura;
+    }
+
+    public double getPeso() {
+        return Peso;
+    }
+
+    public void setPeso(double Peso) {
+        this.Peso = Peso;
+    }
     
 }

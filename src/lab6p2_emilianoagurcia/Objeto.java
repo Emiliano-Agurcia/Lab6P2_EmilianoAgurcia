@@ -28,6 +28,54 @@ public class Objeto {
         this.Calidad = Calidad;
         
     }
+
+    public Persona getUsuario() {
+        return Usuario;
+    }
+
+    public void setUsuario(Persona Usuario) {
+        this.Usuario = Usuario;
+    }
+
+    public Color getColor() {
+        return Color;
+    }
+
+    public void setColor(Color Color) {
+        this.Color = Color;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
+    }
+
+    public String getSize() {
+        return Size;
+    }
+
+    public void setSize(String Size) {
+        this.Size = Size;
+    }
+
+    public String getCalidad() {
+        return Calidad;
+    }
+
+    public void setCalidad(String Calidad) {
+        this.Calidad = Calidad;
+    }
     
     
 }

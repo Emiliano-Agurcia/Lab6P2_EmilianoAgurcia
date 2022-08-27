@@ -216,6 +216,12 @@ Random random = new Random();
 
         BACKGROUND.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TabbedPane.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                TabbedPaneFocusGained(evt);
+            }
+        });
+
         Tab_CP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
@@ -996,12 +1002,27 @@ Random random = new Random();
                         //Arbol
                         DefaultTreeModel ModeloArbol = (DefaultTreeModel) JTree_Personas.getModel();
                         DefaultMutableTreeNode Raiz = (DefaultMutableTreeNode) ModeloArbol.getRoot();
-                        DefaultMutableTreeNode Nodo_Persona;
                         
-                        Nodo_Persona = new DefaultMutableTreeNode(newGerente);
+                        DefaultMutableTreeNode Nodo_Persona = new DefaultMutableTreeNode(
+                                new Persona(
+                                        CP_TF_ID.getText(),
+                                        CP_TF_Nombre.getText(),
+                                        (Integer) CP_SP_Edad.getValue(),
+                                        Sexo,
+                                        EstadoCivil,
+                                        (Double) CP_SP_Altura.getValue(),
+                                        (Double) CP_SP_Peso.getValue()
+                                )
+                        );
                         
+                        DefaultMutableTreeNode Nodo_Gerentes = new DefaultMutableTreeNode();
                         
+                        DefaultMutableTreeNode Nodo_Gerente_Planta = new DefaultMutableTreeNode(); 
+                        DefaultMutableTreeNode Nodo_Gerente_Sucursal = new DefaultMutableTreeNode(); 
+                         
+                        Raiz.add(Nodo_Persona);
                         
+                        ModeloArbol.reload();
                         
                         //Fin Arbol
                         
@@ -1209,19 +1230,27 @@ Random random = new Random();
         DefaultComboBoxModel mModificarPersona = (DefaultComboBoxModel) ModificarPersona.getModel();
         
         if(evt.getStateChange() == 1){
-            int index = Personas.indexOf( (Persona) ModificarPersona.getSelectedItem());
+            int index;
             
             if(mModificarPersona.getSelectedItem() instanceof Gerente){
+                index = Personas.indexOf( (Gerente) ModificarPersona.getSelectedItem());
                 CP_Panel_General1.setVisible(false);
                 CP_Panel_Gerente1.setVisible(true);
                 
+                CP_TF_ID1.setText((Gerente) Personas.get(index).);
             }else{
+                index = Personas.indexOf( (General) ModificarPersona.getSelectedItem());
                 CP_Panel_General1.setVisible(true);
                 CP_Panel_Gerente1.setVisible(false);
                 
             }
         }
     }//GEN-LAST:event_ModificarPersonaItemStateChanged
+
+    private void TabbedPaneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TabbedPaneFocusGained
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TabbedPaneFocusGained
 
     /**
      * @param args the command line arguments
