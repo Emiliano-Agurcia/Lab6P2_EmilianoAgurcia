@@ -1345,7 +1345,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="BT_CO_Modificar">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Agregar Persona"/>
+                    <Property name="text" type="java.lang.String" value="Agregar Objeto"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BT_CO_ModificarMouseClicked"/>
@@ -1603,7 +1603,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="BT_CP_Agregar1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Agregar Persona"/>
+                    <Property name="text" type="java.lang.String" value="Modificar Persona"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BT_CP_Agregar1MouseClicked"/>

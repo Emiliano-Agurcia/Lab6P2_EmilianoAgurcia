@@ -43,6 +43,10 @@ Random random = new Random();
         //Modificar Persona
         CP_Panel_General1.setVisible(false);
         CP_Panel_Gerente1.setVisible(false);
+        //Fin Modificar Persona
+        
+        CP_RBT_SexoM.setSelected(true);
+        CP_RBT_EstadoSoltero.setSelected(true);
     }
     ArrayList <Persona> Personas = new ArrayList();
     ArrayList <String> IDs = new ArrayList();
@@ -630,7 +634,7 @@ Random random = new Random();
         CO_TF_Size.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         Tab_CO.add(CO_TF_Size, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 310, -1));
 
-        BT_CO_Modificar.setText("Agregar Persona");
+        BT_CO_Modificar.setText("Agregar Objeto");
         BT_CO_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BT_CO_ModificarMouseClicked(evt);
@@ -713,7 +717,7 @@ Random random = new Random();
         CP_SP_Altura1.setModel(new javax.swing.SpinnerNumberModel(150.0d, null, null, 0.1d));
         Tab_MP.add(CP_SP_Altura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 80, -1));
 
-        BT_CP_Agregar1.setText("Agregar Persona");
+        BT_CP_Agregar1.setText("Modificar Persona");
         BT_CP_Agregar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BT_CP_Agregar1MouseClicked(evt);
@@ -1163,6 +1167,13 @@ Random random = new Random();
                         CO_TF_Calidad.getText()
                 );
                 Objetos.add(newZapato);
+                CO_Zapato_Descripcion.setText("");
+                CO_Zapato_Comodidad.setValue(5);
+                CO_TA_Descripcion.setText("");
+                CO_TF_Marca.setText("");
+                CO_TF_Size.setText("");
+                CO_TF_Calidad.setText("");
+                
             }
         }else if(CO_CB_TipoObjeto.getSelectedItem().equals("Ropa")){
             if(CO_TA_Descripcion.getText().isEmpty() || CO_TF_Marca.getText().isEmpty() || CO_TF_Size.getText().isEmpty() || CO_TF_Calidad.getText().isEmpty()
@@ -1191,6 +1202,13 @@ Random random = new Random();
                         CO_TF_Calidad.getText()
                 );
                 Objetos.add(newRopa);
+                
+                CO_Ropa_TipoTela.setText("");
+                CO_Ropa_Pais.setText("");
+                CO_TA_Descripcion.setText("");
+                CO_TF_Marca.setText("");
+                CO_TF_Size.setText("");
+                CO_TF_Calidad.setText("");
             }
         }else if(CO_CB_TipoObjeto.getSelectedItem().equals("Hogar")){
             if(CO_TA_Descripcion.getText().isEmpty() || CO_TF_Marca.getText().isEmpty() || CO_TF_Size.getText().isEmpty() || CO_TF_Calidad.getText().isEmpty()
@@ -1208,6 +1226,15 @@ Random random = new Random();
                         CO_TF_Size.getText(),
                         CO_TF_Calidad.getText()
                 );
+                Objetos.add(newHogar);
+                
+                CO_Hogar_Descripcion.setText("");
+                CO_Hogar_Instrucciones.setText("");
+                jSpinner1.setValue(6);
+                CO_TA_Descripcion.setText("");
+                CO_TF_Marca.setText("");
+                CO_TF_Size.setText("");
+                CO_TF_Calidad.setText("");
             }
         }
     }//GEN-LAST:event_BT_CO_ModificarMouseClicked
@@ -1219,10 +1246,21 @@ Random random = new Random();
 
     private void BT_CP_Agregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BT_CP_Agregar1MouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_BT_CP_Agregar1MouseClicked
 
     private void CP_General_Horario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CP_General_Horario1ActionPerformed
         // TODO add your handling code here:
+        DefaultComboBoxModel mModificarPersona = (DefaultComboBoxModel) ModificarPersona.getModel();
+        int index;
+        
+        if(mModificarPersona.getSelectedItem() instanceof Gerente){
+            index = Personas.indexOf( (Gerente) ModificarPersona.getSelectedItem());
+            
+        }else{
+            index = Personas.indexOf( (General) ModificarPersona.getSelectedItem());
+            
+        }
     }//GEN-LAST:event_CP_General_Horario1ActionPerformed
 
     private void ModificarPersonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ModificarPersonaItemStateChanged
@@ -1237,12 +1275,43 @@ Random random = new Random();
                 CP_Panel_General1.setVisible(false);
                 CP_Panel_Gerente1.setVisible(true);
                 
-                CP_TF_ID1.setText((Gerente) Personas.get(index).);
+                CP_TF_ID1.setText((String) Personas.get(index).getID());
+                CP_TF_Nombre1.setText((String) Personas.get(index).getNombre());
+                CP_SP_Edad1.setValue(Personas.get(index).getEdad());
+                CP_SP_Altura1.setValue(Personas.get(index).getAltura());
+                CP_SP_Peso1.setValue(Personas.get(index).getPeso());
+                if(Personas.get(index).getSexo() == 'M'){
+                    CP_RBT_SexoM1.setSelected(true);
+                }else{
+                    CP_RBT_SexoF1.setSelected(true);
+                }
+                
+                if(Personas.get(index).getEstadoCivil().equals("Soltero")){
+                    CP_RBT_EstadoSoltero1.setSelected(true);
+                }else{
+                    CP_RBT_EstadoCasado1.setSelected(true);
+                }
             }else{
                 index = Personas.indexOf( (General) ModificarPersona.getSelectedItem());
                 CP_Panel_General1.setVisible(true);
                 CP_Panel_Gerente1.setVisible(false);
                 
+                CP_TF_ID1.setText((String) Personas.get(index).getID());
+                CP_TF_Nombre1.setText((String) Personas.get(index).getNombre());
+                CP_SP_Edad1.setValue(Personas.get(index).getEdad());
+                CP_SP_Altura1.setValue(Personas.get(index).getAltura());
+                CP_SP_Peso1.setValue(Personas.get(index).getPeso());
+                if(Personas.get(index).getSexo() == 'M'){
+                    CP_RBT_SexoM1.setSelected(true);
+                }else{
+                    CP_RBT_SexoF1.setSelected(true);
+                }
+                
+                if(Personas.get(index).getEstadoCivil().equals("Soltero")){
+                    CP_RBT_EstadoSoltero1.setSelected(true);
+                }else{
+                    CP_RBT_EstadoCasado1.setSelected(true);
+                }
             }
         }
     }//GEN-LAST:event_ModificarPersonaItemStateChanged
