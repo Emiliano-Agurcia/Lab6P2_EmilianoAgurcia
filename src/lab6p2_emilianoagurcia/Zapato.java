@@ -14,7 +14,7 @@ public class Zapato extends Objeto{
     String DescripcionSuela;
     int Comodidad;//1-10
 
-    public Zapato(String Talla, String DescripcionSuela, int Comodidad, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+    public Zapato(String Talla, String DescripcionSuela, int Comodidad, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, String Size, String Calidad) {
         super(Usuario, Color, Descripcion, Marca, Size, Calidad);
         this.Talla = Talla;
         this.DescripcionSuela = DescripcionSuela;
@@ -79,11 +79,11 @@ public class Zapato extends Objeto{
         this.Marca = Marca;
     }
 
-    public int getSize() {
+    public String getSize() {
         return Size;
     }
 
-    public void setSize(int Size) {
+    public void setSize(String Size) {
         this.Size = Size;
     }
 

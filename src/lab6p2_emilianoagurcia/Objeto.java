@@ -16,10 +16,10 @@ public class Objeto {
     Color Color;
     String Descripcion;
     String Marca;
-    int Size;
+    String Size;
     String Calidad;
 
-    public Objeto(Persona Usuario, Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+    public Objeto(Persona Usuario, Color Color, String Descripcion, String Marca, String Size, String Calidad) {
         this.Usuario = Usuario;
         this.Color = Color;
         this.Descripcion = Descripcion;

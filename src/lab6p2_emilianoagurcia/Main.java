@@ -6,9 +6,11 @@
 package lab6p2_emilianoagurcia;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -296,7 +298,7 @@ Random random = new Random();
         jTextField3.setText("cm");
         Tab_CP.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 40, -1));
 
-        CP_Panel_General.setBackground(new java.awt.Color(56, 79, 93));
+        CP_Panel_General.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 204)));
         CP_Panel_General.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
@@ -319,7 +321,7 @@ Random random = new Random();
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Personas Generales");
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        CP_Panel_General.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 510, -1));
+        CP_Panel_General.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 510, -1));
 
         jLabel14.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel14.setText("Ocupación");
@@ -348,7 +350,7 @@ Random random = new Random();
         jTextField8.setText("Semanas");
         CP_Panel_General.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 80, -1));
 
-        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, 240));
+        Tab_CP.add(CP_Panel_General, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, 260));
 
         jLabel24.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -356,7 +358,7 @@ Random random = new Random();
         jLabel24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Tab_CP.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1270, -1));
 
-        CP_Panel_Gerente.setBackground(new java.awt.Color(91, 96, 99));
+        CP_Panel_Gerente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0)));
         CP_Panel_Gerente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CP_Gerente_Usuario.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
@@ -383,7 +385,7 @@ Random random = new Random();
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("GERENTE");
+        jLabel9.setText("Gerente");
         jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         CP_Panel_Gerente.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 510, -1));
 
@@ -423,6 +425,12 @@ Random random = new Random();
         jLabel23.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel23.setText("Persona que lo ingresó");
         Tab_CO.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, -1));
+
+        CO_BT_Color.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CO_BT_ColorMouseClicked(evt);
+            }
+        });
         Tab_CO.add(CO_BT_Color, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, 30));
 
         CO_CB_TipoObjeto.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
@@ -440,7 +448,7 @@ Random random = new Random();
         CO_TF_Marca.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         Tab_CO.add(CO_TF_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 310, -1));
 
-        CO_Panel_Zapato.setBackground(new java.awt.Color(51, 51, 51));
+        CO_Panel_Zapato.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         CO_Panel_Zapato.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel25.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -479,6 +487,7 @@ Random random = new Random();
         CO_Panel_Zapato.add(CO_Zapato_Talla_M, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
 
         CO_Talla_Zapato.add(CO_Zapato_Talla_S);
+        CO_Zapato_Talla_S.setSelected(true);
         CO_Zapato_Talla_S.setText("S");
         CO_Panel_Zapato.add(CO_Zapato_Talla_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
 
@@ -493,7 +502,7 @@ Random random = new Random();
 
         Tab_CO.add(CO_Panel_Zapato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 580, 320));
 
-        CO_Panel_Ropa.setBackground(new java.awt.Color(51, 51, 51));
+        CO_Panel_Ropa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 51)));
         CO_Panel_Ropa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel29.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -543,7 +552,7 @@ Random random = new Random();
 
         Tab_CO.add(CO_Panel_Ropa, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 580, 320));
 
-        CO_Panel_Hogar.setBackground(new java.awt.Color(51, 51, 51));
+        CO_Panel_Hogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 0)));
         CO_Panel_Hogar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel33.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -605,7 +614,11 @@ Random random = new Random();
         Tab_CO.add(CO_TF_Size, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 310, -1));
 
         BT_CO_Modificar.setText("Agregar Persona");
-        BT_CO_Modificar.setEnabled(false);
+        BT_CO_Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BT_CO_ModificarMouseClicked(evt);
+            }
+        });
         Tab_CO.add(BT_CO_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 510, 220, 60));
 
         TabbedPane.addTab("Crear Objeto", Tab_CO);
@@ -899,6 +912,7 @@ Random random = new Random();
         
         String EstadoCivil;
         char Sexo;
+        DefaultComboBoxModel mCO_CB_PersonaIngreso = (DefaultComboBoxModel) CO_CB_PersonaIngreso.getModel();
         
         if(CP_RBT_EstadoSoltero.isSelected()){
             EstadoCivil = "Soltero";
@@ -921,7 +935,7 @@ Random random = new Random();
                      ||CP_Gerente_Usuario.getText().isEmpty() || CP_Gerente_Password.getText().isEmpty()){
                         JOptionPane.showMessageDialog(this, "Llene todos los Campos");
                     }else{
-                        Personas.add(
+                        Gerente newGerente = 
                                 new Gerente(
                                         CP_Gerente_Usuario.getText(),
                                         CP_Gerente_Password.getText(),
@@ -933,8 +947,10 @@ Random random = new Random();
                                         EstadoCivil,
                                         (Double) CP_SP_Altura.getValue(),
                                         (Double) CP_SP_Peso.getValue()
-                                )
-                        );    
+                                );
+                        Personas.add(newGerente);    
+                        mCO_CB_PersonaIngreso.addElement(newGerente);
+                        
                         CP_CB_TipoPersona.setSelectedIndex(0);
                         CP_TF_ID.setText("");
                         CP_TF_Nombre.setText("");
@@ -957,7 +973,7 @@ Random random = new Random();
                     || CP_General_Ocupacion.getText().isEmpty() || CP_General_Horario.getText().isEmpty()){
                         JOptionPane.showMessageDialog(this, "Llene todos los Campos");
                     }else{
-                        Personas.add(
+                        General newGeneral =
                                 new General(
                                         CP_General_Ocupacion.getText(),
                                         CP_General_Horario.getText(),
@@ -970,8 +986,10 @@ Random random = new Random();
                                         EstadoCivil,
                                         (Double) CP_SP_Altura.getValue(),
                                         (Double) CP_SP_Peso.getValue()
-                                )
-                        );    
+                                );
+                        Personas.add(newGeneral);
+                        mCO_CB_PersonaIngreso.addElement(newGeneral);
+                        
                         CP_CB_TipoPersona.setSelectedIndex(0);
                         CP_TF_ID.setText("");
                         CP_TF_Nombre.setText("");
@@ -1033,6 +1051,95 @@ Random random = new Random();
             }
         }
     }//GEN-LAST:event_CO_CB_TipoObjetoItemStateChanged
+
+    private void BT_CO_ModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BT_CO_ModificarMouseClicked
+        // TODO add your handling code here:
+        
+        String Talla;
+        DefaultComboBoxModel mCO_CB_PersonaIngreso = (DefaultComboBoxModel) CO_CB_PersonaIngreso.getModel();
+        
+        if(CO_CB_TipoObjeto.getSelectedItem().equals("Zapato")){
+            if(CO_TA_Descripcion.getText().isEmpty() || CO_TF_Marca.getText().isEmpty() || CO_TF_Size.getText().isEmpty() || CO_TF_Calidad.getText().isEmpty()
+            || CO_Zapato_Descripcion.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Llene todos los Campos");
+            }else{
+                
+                if(CO_Zapato_Talla_S.isSelected()){
+                    Talla = "S";
+                }else if(CO_Zapato_Talla_M.isSelected()){
+                    Talla = "M";
+                }else if(CO_Zapato_Talla_L.isSelected()){
+                    Talla = "L";
+                }else{
+                    Talla = "XL";
+                }
+                
+                
+                Zapato newZapato = new Zapato(
+                        Talla,
+                        CO_Zapato_Descripcion.getText(),
+                        (Integer) CO_Zapato_Comodidad.getValue(),
+                        (Persona) mCO_CB_PersonaIngreso.getSelectedItem(),
+                        CO_BT_Color.getBackground(),
+                        CO_TA_Descripcion.getText(),
+                        CO_TF_Marca.getText(),
+                        CO_TF_Size.getText(),
+                        CO_TF_Calidad.getText()
+                );
+                Objetos.add(newZapato);
+            }
+        }else if(CO_CB_TipoObjeto.getSelectedItem().equals("Ropa")){
+            if(CO_TA_Descripcion.getText().isEmpty() || CO_TF_Marca.getText().isEmpty() || CO_TF_Size.getText().isEmpty() || CO_TF_Calidad.getText().isEmpty()
+            || CO_Ropa_TipoTela.getText().isEmpty() || CO_Ropa_Pais.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Llene todos los Campos");
+            }else{
+                if(CO_Ropa_Talla_S.isSelected()){
+                    Talla = "S";
+                }else if(CO_Ropa_Talla_M.isSelected()){
+                    Talla = "M";
+                }else if(CO_Ropa_Talla_L.isSelected()){
+                    Talla = "L";
+                }else{
+                    Talla = "XL";
+                }
+                
+                Ropa newRopa = new Ropa(
+                        Talla,
+                        CO_Ropa_TipoTela.getText(),
+                        CO_Ropa_Pais.getText(),
+                        (Persona) mCO_CB_PersonaIngreso.getSelectedItem(),
+                        CO_BT_Color.getBackground(),
+                        CO_TA_Descripcion.getText(),
+                        CO_TF_Marca.getText(),
+                        CO_TF_Size.getText(),
+                        CO_TF_Calidad.getText()
+                );
+                Objetos.add(newRopa);
+            }
+        }else if(CO_CB_TipoObjeto.getSelectedItem().equals("Hogar")){
+            if(CO_TA_Descripcion.getText().isEmpty() || CO_TF_Marca.getText().isEmpty() || CO_TF_Size.getText().isEmpty() || CO_TF_Calidad.getText().isEmpty()
+            || CO_Hogar_Descripcion.getText().isEmpty() || CO_Hogar_Instrucciones.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Llene todos los Campos");
+            }else{
+                Hogar newHogar = new Hogar(
+                        CO_Hogar_Descripcion.getText(),
+                        CO_Hogar_Instrucciones.getText(),
+                        (Integer) jSpinner1.getValue(),
+                        (Persona) mCO_CB_PersonaIngreso.getSelectedItem(),
+                        CO_BT_Color.getBackground(),
+                        CO_TA_Descripcion.getText(),
+                        CO_TF_Marca.getText(),
+                        CO_TF_Size.getText(),
+                        CO_TF_Calidad.getText()
+                );
+            }
+        }
+    }//GEN-LAST:event_BT_CO_ModificarMouseClicked
+
+    private void CO_BT_ColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CO_BT_ColorMouseClicked
+        // TODO add your handling code here:
+        CO_BT_Color.setBackground(JColorChooser.showDialog(this, "Elegir Color", Color.yellow));
+    }//GEN-LAST:event_CO_BT_ColorMouseClicked
 
     /**
      * @param args the command line arguments

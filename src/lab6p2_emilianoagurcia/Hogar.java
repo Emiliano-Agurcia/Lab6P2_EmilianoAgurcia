@@ -14,7 +14,7 @@ public class Hogar extends Objeto{
     String Instrucciones;//Instrucciones de funcionamiento
     int Garantia;//Tiempo de garantia
 
-    public Hogar(String DescripcionHogar, String Instrucciones, int Garantia, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, int Size, String Calidad) {
+    public Hogar(String DescripcionHogar, String Instrucciones, int Garantia, Persona Usuario, java.awt.Color Color, String Descripcion, String Marca, String Size, String Calidad) {
         super(Usuario, Color, Descripcion, Marca, Size, Calidad);
         this.DescripcionHogar = DescripcionHogar;
         this.Instrucciones = Instrucciones;
@@ -79,11 +79,11 @@ public class Hogar extends Objeto{
         this.Marca = Marca;
     }
 
-    public int getSize() {
+    public String getSize() {
         return Size;
     }
 
-    public void setSize(int Size) {
+    public void setSize(String Size) {
         this.Size = Size;
     }
 
